@@ -1,0 +1,10 @@
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\bin\Debug\Harjoitustehtavat.exe.config
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\bin\Debug\Harjoitustehtavat.exe
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\bin\Debug\Harjoitustehtavat.pdb
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.csprojAssemblyReference.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.Form1.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.Properties.Resources.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.csproj.GenerateResource.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.csproj.CoreCompileInputs.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.exe
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Harjoitustehtavat\Harjoitustehtavat\obj\Debug\Harjoitustehtavat.pdb
