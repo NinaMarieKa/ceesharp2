@@ -1,0 +1,13 @@
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\bin\Debug\Nelilaskin.exe.config
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\bin\Debug\Nelilaskin.exe
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\bin\Debug\Nelilaskin.pdb
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\bin\Debug\aa-DJ\Nelilaskin.resources.dll
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.csprojAssemblyReference.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.Form1.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.Properties.Resources.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.Form1.aa-DJ.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.csproj.GenerateResource.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.csproj.CoreCompileInputs.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\aa-DJ\Nelilaskin.resources.dll
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.exe
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Nelilaskin\Nelilaskin\obj\Debug\Nelilaskin.pdb

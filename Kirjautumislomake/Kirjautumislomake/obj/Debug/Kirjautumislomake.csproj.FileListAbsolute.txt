@@ -1,0 +1,12 @@
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\bin\Debug\Kirjautumislomake.exe.config
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\bin\Debug\Kirjautumislomake.exe
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\bin\Debug\Kirjautumislomake.pdb
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.csprojAssemblyReference.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.Form1.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.Paaikkuna.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.Properties.Resources.resources
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.csproj.GenerateResource.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.csproj.CoreCompileInputs.cache
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.exe
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.pdb
+C:\Users\Nina Marie\Documents\repositiot\ceesharp2\Kirjautumislomake\Kirjautumislomake\obj\Debug\Kirjautumislomake.Rekisteroidy.resources
