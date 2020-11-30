@@ -82,8 +82,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Rekisteroidy.resx">
+    <EmbeddedResource Include="..\..\..\..\repot\ceesharp2\Kirjautumislomake\Kirjautumislomake\Rekisteroidy.resx">
       <DependentUpon>Rekisteroidy.cs</DependentUpon>
+      <Link>Rekisteroidy.resx</Link>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
