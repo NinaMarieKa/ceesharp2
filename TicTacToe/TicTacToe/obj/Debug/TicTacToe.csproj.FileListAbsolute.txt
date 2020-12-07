@@ -9,3 +9,11 @@ C:\Users\Nina Marie\Documents\repositiot\ceesharp2\TicTacToe\TicTacToe\obj\Debug
 C:\Users\Nina Marie\Documents\repositiot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
 C:\Users\Nina Marie\Documents\repositiot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
 C:\Users\Nina Marie\Documents\repositiot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.Form2.resources
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csprojAssemblyReference.cache
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.Form1.resources
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.Form2.resources
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.Properties.Resources.resources
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateResource.cache
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
+C:\Users\Nina Marie\Documents\repot\ceesharp2\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
