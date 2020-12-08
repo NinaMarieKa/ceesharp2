@@ -39,11 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.HuoneenNumeroTB = new System.Windows.Forms.TextBox();
+            this.HuoneHintaTB = new System.Windows.Forms.TextBox();
+            this.HuoneenTyyppiCB = new System.Windows.Forms.ComboBox();
+            this.VapaaLB = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,11 +70,11 @@
             // AsiakasMuokkaaBTN
             // 
             this.AsiakasMuokkaaBTN.BackColor = System.Drawing.Color.RosyBrown;
-            this.AsiakasMuokkaaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasMuokkaaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasMuokkaaBTN.ForeColor = System.Drawing.Color.White;
-            this.AsiakasMuokkaaBTN.Location = new System.Drawing.Point(142, 592);
+            this.AsiakasMuokkaaBTN.Location = new System.Drawing.Point(30, 534);
             this.AsiakasMuokkaaBTN.Name = "AsiakasMuokkaaBTN";
-            this.AsiakasMuokkaaBTN.Size = new System.Drawing.Size(121, 36);
+            this.AsiakasMuokkaaBTN.Size = new System.Drawing.Size(161, 49);
             this.AsiakasMuokkaaBTN.TabIndex = 18;
             this.AsiakasMuokkaaBTN.Text = "Muokkaa";
             this.AsiakasMuokkaaBTN.UseVisualStyleBackColor = false;
@@ -83,11 +82,11 @@
             // UusiAsiakasBTN
             // 
             this.UusiAsiakasBTN.BackColor = System.Drawing.Color.RosyBrown;
-            this.UusiAsiakasBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UusiAsiakasBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UusiAsiakasBTN.ForeColor = System.Drawing.Color.White;
-            this.UusiAsiakasBTN.Location = new System.Drawing.Point(269, 592);
+            this.UusiAsiakasBTN.Location = new System.Drawing.Point(197, 534);
             this.UusiAsiakasBTN.Name = "UusiAsiakasBTN";
-            this.UusiAsiakasBTN.Size = new System.Drawing.Size(222, 36);
+            this.UusiAsiakasBTN.Size = new System.Drawing.Size(222, 49);
             this.UusiAsiakasBTN.TabIndex = 19;
             this.UusiAsiakasBTN.Text = "Lisää uusi varaus";
             this.UusiAsiakasBTN.UseVisualStyleBackColor = false;
@@ -95,11 +94,11 @@
             // AsiakasPoistaBTN
             // 
             this.AsiakasPoistaBTN.BackColor = System.Drawing.Color.RosyBrown;
-            this.AsiakasPoistaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasPoistaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasPoistaBTN.ForeColor = System.Drawing.Color.White;
-            this.AsiakasPoistaBTN.Location = new System.Drawing.Point(497, 592);
+            this.AsiakasPoistaBTN.Location = new System.Drawing.Point(425, 534);
             this.AsiakasPoistaBTN.Name = "AsiakasPoistaBTN";
-            this.AsiakasPoistaBTN.Size = new System.Drawing.Size(75, 36);
+            this.AsiakasPoistaBTN.Size = new System.Drawing.Size(147, 49);
             this.AsiakasPoistaBTN.TabIndex = 20;
             this.AsiakasPoistaBTN.Text = "Poista";
             this.AsiakasPoistaBTN.UseVisualStyleBackColor = false;
@@ -107,11 +106,11 @@
             // AsiakasTyhjennaBTN
             // 
             this.AsiakasTyhjennaBTN.BackColor = System.Drawing.Color.RosyBrown;
-            this.AsiakasTyhjennaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasTyhjennaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasTyhjennaBTN.ForeColor = System.Drawing.Color.White;
-            this.AsiakasTyhjennaBTN.Location = new System.Drawing.Point(350, 634);
+            this.AsiakasTyhjennaBTN.Location = new System.Drawing.Point(30, 606);
             this.AsiakasTyhjennaBTN.Name = "AsiakasTyhjennaBTN";
-            this.AsiakasTyhjennaBTN.Size = new System.Drawing.Size(222, 36);
+            this.AsiakasTyhjennaBTN.Size = new System.Drawing.Size(542, 55);
             this.AsiakasTyhjennaBTN.TabIndex = 21;
             this.AsiakasTyhjennaBTN.Text = "Tyhjennä kentät";
             this.AsiakasTyhjennaBTN.UseVisualStyleBackColor = false;
@@ -152,9 +151,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 285);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 29);
+            this.label4.Size = new System.Drawing.Size(68, 29);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Puhelin";
+            this.label4.Text = "Hinta";
             // 
             // label5
             // 
@@ -166,53 +165,42 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Vapaa";
             // 
-            // radioButton1
+            // HuoneenNumeroTB
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(222, 346);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(90, 33);
-            this.radioButton1.TabIndex = 27;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Kyllä";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.HuoneenNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuoneenNumeroTB.Location = new System.Drawing.Point(222, 144);
+            this.HuoneenNumeroTB.Name = "HuoneenNumeroTB";
+            this.HuoneenNumeroTB.Size = new System.Drawing.Size(246, 35);
+            this.HuoneenNumeroTB.TabIndex = 29;
             // 
-            // radioButton2
+            // HuoneHintaTB
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(337, 346);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(60, 33);
-            this.radioButton2.TabIndex = 28;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Ei";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.HuoneHintaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuoneHintaTB.Location = new System.Drawing.Point(222, 282);
+            this.HuoneHintaTB.Name = "HuoneHintaTB";
+            this.HuoneHintaTB.Size = new System.Drawing.Size(246, 35);
+            this.HuoneHintaTB.TabIndex = 31;
             // 
-            // textBox1
+            // HuoneenTyyppiCB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(222, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 35);
-            this.textBox1.TabIndex = 29;
+            this.HuoneenTyyppiCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuoneenTyyppiCB.FormattingEnabled = true;
+            this.HuoneenTyyppiCB.Location = new System.Drawing.Point(222, 217);
+            this.HuoneenTyyppiCB.Name = "HuoneenTyyppiCB";
+            this.HuoneenTyyppiCB.Size = new System.Drawing.Size(246, 37);
+            this.HuoneenTyyppiCB.TabIndex = 32;
             // 
-            // textBox2
+            // VapaaLB
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(222, 214);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 35);
-            this.textBox2.TabIndex = 30;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(222, 282);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(246, 35);
-            this.textBox3.TabIndex = 31;
+            this.VapaaLB.AutoSize = true;
+            this.VapaaLB.BackColor = System.Drawing.Color.White;
+            this.VapaaLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VapaaLB.ForeColor = System.Drawing.Color.Green;
+            this.VapaaLB.Location = new System.Drawing.Point(226, 348);
+            this.VapaaLB.Name = "VapaaLB";
+            this.VapaaLB.Size = new System.Drawing.Size(87, 26);
+            this.VapaaLB.TabIndex = 33;
+            this.VapaaLB.Text = "KYLLÄ";
             // 
             // HallitseHuoneita
             // 
@@ -220,11 +208,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1178, 706);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.VapaaLB);
+            this.Controls.Add(this.HuoneenTyyppiCB);
+            this.Controls.Add(this.HuoneHintaTB);
+            this.Controls.Add(this.HuoneenNumeroTB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -235,9 +222,11 @@
             this.Controls.Add(this.UusiAsiakasBTN);
             this.Controls.Add(this.AsiakasMuokkaaBTN);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "HallitseHuoneita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hallitse huoneita";
+            this.Load += new System.EventHandler(this.HallitseHuoneita_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -259,10 +248,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox HuoneenNumeroTB;
+        private System.Windows.Forms.TextBox HuoneHintaTB;
+        private System.Windows.Forms.ComboBox HuoneenTyyppiCB;
+        private System.Windows.Forms.Label VapaaLB;
     }
 }

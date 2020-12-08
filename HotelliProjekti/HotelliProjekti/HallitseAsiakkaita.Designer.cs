@@ -85,6 +85,7 @@
             this.AsiakasData.RowTemplate.Height = 28;
             this.AsiakasData.Size = new System.Drawing.Size(559, 512);
             this.AsiakasData.TabIndex = 1;
+            this.AsiakasData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AsiakasData_CellContentClick);
             // 
             // AsiakasEtunimiLB
             // 
@@ -204,6 +205,7 @@
             this.AsiakasKayttajaTB.Name = "AsiakasKayttajaTB";
             this.AsiakasKayttajaTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasKayttajaTB.TabIndex = 14;
+            this.AsiakasKayttajaTB.TextChanged += new System.EventHandler(this.AsiakasKayttajaTB_TextChanged);
             // 
             // AsiakasSalasanaTB
             // 
@@ -224,6 +226,7 @@
             this.AsiakasMuokkaaBTN.TabIndex = 16;
             this.AsiakasMuokkaaBTN.Text = "Muokkaa";
             this.AsiakasMuokkaaBTN.UseVisualStyleBackColor = false;
+            this.AsiakasMuokkaaBTN.Click += new System.EventHandler(this.AsiakasMuokkaaBTN_Click);
             // 
             // UusiAsiakasBTN
             // 
@@ -249,6 +252,7 @@
             this.AsiakasPoistaBTN.TabIndex = 18;
             this.AsiakasPoistaBTN.Text = "Poista";
             this.AsiakasPoistaBTN.UseVisualStyleBackColor = false;
+            this.AsiakasPoistaBTN.Click += new System.EventHandler(this.AsiakasPoistaBTN_Click);
             // 
             // AsiakasTyhjennaBTN
             // 

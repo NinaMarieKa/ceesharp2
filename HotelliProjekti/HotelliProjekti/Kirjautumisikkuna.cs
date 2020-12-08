@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace HotelliProjekti
 {
-    public partial class Form1 : Form
+    public partial class Kirjautumisikkuna : Form
     {
-        public Form1()
+        public Kirjautumisikkuna()
         {
             InitializeComponent();
         }

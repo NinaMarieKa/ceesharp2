@@ -16,5 +16,15 @@ namespace HotelliProjekti
         {
             InitializeComponent();
         }
+
+        HUONEET huoneet = new HUONEET();
+        private void HallitseHuoneita_Load(object sender, EventArgs e)
+        {
+            HuoneenTyyppiCB.DataSource = huoneet.huoneTyyppiLista();
+            HuoneenTyyppiCB.DisplayMember = "";
+            HuoneenTyyppiCB.ValueMember = "";
+
+
+        }
     }
 }

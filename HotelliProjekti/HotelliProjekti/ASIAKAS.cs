@@ -19,7 +19,7 @@ namespace HotelliProjekti
 
 
         // funktio uuden asiakkaan luomiseksi
-        public bool lisaaAsiakas(String enimi, String snimi, String osoite, int pnumero, String ptpaikka, String ktunnus, String ssana)
+        public bool lisaaAsiakas(String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String ktunnus, String ssana)
         {
             MySqlCommand komento = new MySqlCommand();
             String lisaaKysely = "INSERT INTO `asiakkaat`" +
@@ -30,7 +30,7 @@ namespace HotelliProjekti
             //komento.Parameters.Add("");
 
             //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
-            komento.Parameters.Add("@ktu", MySqlDbType.Int32).Value = ktunnus;
+            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
             komento.Parameters.Add("@enm", MySqlDbType.VarChar).Value = enimi;
             komento.Parameters.Add("@snm", MySqlDbType.VarChar).Value = snimi;
             komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = osoite;
@@ -58,7 +58,7 @@ namespace HotelliProjekti
         }
 
         // Tässä luodaan funktio, joka hakee asiakaslistan
-        public DataTable HaeAsiakkaat();
+        public DataTable haeAsiakkaat()
         {
          MySqlCommand komento = new MySqlCommand("SELECT * FROM `asiakkaat`", yht.OtaYhteytta());
          MySqlDataAdapter adapteri = new MySqlDataAdapter();
@@ -70,15 +70,15 @@ namespace HotelliProjekti
         }
 
     // Tässä luodaan funktio asiakkaan muokkaamiseksi
-    public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, int pnumero, String ptpaikka, String ktunnus, String ssana)
-    {
+        public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String ktunnus, String ssana)
+       {
         MySqlCommand komento = new MySqlCommand();
-        String lisaaKysely = "INSERT INTO `asiakkaat`" + 
+        String muokattuKysely = "INSERT INTO `asiakkaat`" + 
             "(Ktunnus, Etunimi, Sukunimi, Lahiosoite, Postinumero, Postitoimipaikka, Salasana)" +
             "VALUES(@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa); " + "WHERE Ktunnus =@ktu";
-        komento.CommandText = lisaaKysely;
+        komento.CommandText = muokattuKysely;
         komento.Connection = yht.OtaYhteytta();
-        komento.Parameters.Add("")
+        //komento.Parameters.Add("");
 
             //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
         komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
@@ -102,7 +102,36 @@ namespace HotelliProjekti
             yht.SuljeYhteys();
             return false;
         }
-    }
+
+        
+       }
+
+        public bool poistaAsiakas(String ktunnus)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String poistaKysely = "DELETE FROM `asiakkaat` WHERE `Ktunnus`=@ktu";
+            komento.CommandText = poistaKysely;
+            komento.Connection = yht.OtaYhteytta();
+            //komento.Parameters.Add("");
+
+            //@ktu
+            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
+
+            yht.AvaaYhteys();
+            // Avataan ja suljetaan yhteys
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yht.SuljeYhteys();
+                return true;
+
+            }
+            else
+            {
+                yht.SuljeYhteys();
+                return false;
+            }
+        }
+
     }
 
 
