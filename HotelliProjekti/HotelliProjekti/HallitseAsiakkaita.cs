@@ -106,17 +106,7 @@ namespace HotelliProjekti
             }
         }
 
-        private void AsiakasData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            AsiakasEtunimiTB.Text = AsiakasData.CurrentRow.Cells[0].Value.ToString();
-            AsiakasSukunimiTB.Text = AsiakasData.CurrentRow.Cells[1].Value.ToString();
-            AsiakasOsoiteTB.Text = AsiakasData.CurrentRow.Cells[2].Value.ToString();
-            AsiakasPostinumeroTB.Text = AsiakasData.CurrentRow.Cells[3].Value.ToString();
-            AsiakasToimipaikkaTB.Text = AsiakasData.CurrentRow.Cells[4].Value.ToString();
-            AsiakasKayttajaTB.Text = AsiakasData.CurrentRow.Cells[5].Value.ToString();
-            AsiakasSalasanaTB.Text = AsiakasData.CurrentRow.Cells[6].Value.ToString();
-
-        }
+   
 
         private void AsiakasKayttajaTB_TextChanged(object sender, EventArgs e)
         {
@@ -143,6 +133,18 @@ namespace HotelliProjekti
             {
                 MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Näyttää valitun rivin tekstibokseissa
+        private void AsiakasData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AsiakasEtunimiTB.Text = AsiakasData.CurrentRow.Cells[0].Value.ToString();
+            AsiakasSukunimiTB.Text = AsiakasData.CurrentRow.Cells[1].Value.ToString();
+            AsiakasOsoiteTB.Text = AsiakasData.CurrentRow.Cells[2].Value.ToString();
+            AsiakasPostinumeroTB.Text = AsiakasData.CurrentRow.Cells[3].Value.ToString();
+            AsiakasToimipaikkaTB.Text = AsiakasData.CurrentRow.Cells[4].Value.ToString();
+            AsiakasKayttajaTB.Text = AsiakasData.CurrentRow.Cells[5].Value.ToString();
+            AsiakasSalasanaTB.Text = AsiakasData.CurrentRow.Cells[6].Value.ToString();
         }
     }
 }

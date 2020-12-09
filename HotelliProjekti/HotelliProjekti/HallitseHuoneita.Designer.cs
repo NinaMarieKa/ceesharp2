@@ -34,7 +34,7 @@
             this.UusiHuoneBTN = new System.Windows.Forms.Button();
             this.HuonePoistaBTN = new System.Windows.Forms.Button();
             this.HuoneTyhjennaBTN = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVHuoneet = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,9 +42,12 @@
             this.HuoneenNumeroTB = new System.Windows.Forms.TextBox();
             this.HuonePuhelinTB = new System.Windows.Forms.TextBox();
             this.HuoneenTyyppiCB = new System.Windows.Forms.ComboBox();
-            this.VapaaLB = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButtonKylla = new System.Windows.Forms.RadioButton();
+            this.radioButtonEi = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVHuoneet)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,15 +122,16 @@
             this.HuoneTyhjennaBTN.UseVisualStyleBackColor = false;
             this.HuoneTyhjennaBTN.Click += new System.EventHandler(this.HuoneTyhjennaBTN_Click);
             // 
-            // dataGridView1
+            // dGVHuoneet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(607, 147);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(542, 523);
-            this.dataGridView1.TabIndex = 22;
+            this.dGVHuoneet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVHuoneet.Location = new System.Drawing.Point(607, 147);
+            this.dGVHuoneet.Name = "dGVHuoneet";
+            this.dGVHuoneet.RowHeadersWidth = 62;
+            this.dGVHuoneet.RowTemplate.Height = 28;
+            this.dGVHuoneet.Size = new System.Drawing.Size(542, 523);
+            this.dGVHuoneet.TabIndex = 22;
+            this.dGVHuoneet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHuoneet_CellClick);
             // 
             // label2
             // 
@@ -195,17 +199,41 @@
             this.HuoneenTyyppiCB.Size = new System.Drawing.Size(246, 37);
             this.HuoneenTyyppiCB.TabIndex = 32;
             // 
-            // VapaaLB
+            // panel2
             // 
-            this.VapaaLB.AutoSize = true;
-            this.VapaaLB.BackColor = System.Drawing.Color.White;
-            this.VapaaLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VapaaLB.ForeColor = System.Drawing.Color.Green;
-            this.VapaaLB.Location = new System.Drawing.Point(226, 348);
-            this.VapaaLB.Name = "VapaaLB";
-            this.VapaaLB.Size = new System.Drawing.Size(87, 26);
-            this.VapaaLB.TabIndex = 33;
-            this.VapaaLB.Text = "KYLLÄ";
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.radioButtonEi);
+            this.panel2.Controls.Add(this.radioButtonKylla);
+            this.panel2.Location = new System.Drawing.Point(222, 341);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(246, 60);
+            this.panel2.TabIndex = 34;
+            // 
+            // radioButtonKylla
+            // 
+            this.radioButtonKylla.AutoSize = true;
+            this.radioButtonKylla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonKylla.ForeColor = System.Drawing.Color.Green;
+            this.radioButtonKylla.Location = new System.Drawing.Point(12, 14);
+            this.radioButtonKylla.Name = "radioButtonKylla";
+            this.radioButtonKylla.Size = new System.Drawing.Size(116, 33);
+            this.radioButtonKylla.TabIndex = 0;
+            this.radioButtonKylla.TabStop = true;
+            this.radioButtonKylla.Text = "KYLLÄ";
+            this.radioButtonKylla.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonEi
+            // 
+            this.radioButtonEi.AutoSize = true;
+            this.radioButtonEi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonEi.ForeColor = System.Drawing.Color.Red;
+            this.radioButtonEi.Location = new System.Drawing.Point(149, 14);
+            this.radioButtonEi.Name = "radioButtonEi";
+            this.radioButtonEi.Size = new System.Drawing.Size(62, 33);
+            this.radioButtonEi.TabIndex = 1;
+            this.radioButtonEi.TabStop = true;
+            this.radioButtonEi.Text = "EI";
+            this.radioButtonEi.UseVisualStyleBackColor = true;
             // 
             // HallitseHuoneita
             // 
@@ -213,7 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1178, 706);
-            this.Controls.Add(this.VapaaLB);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.HuoneenTyyppiCB);
             this.Controls.Add(this.HuonePuhelinTB);
             this.Controls.Add(this.HuoneenNumeroTB);
@@ -221,7 +249,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGVHuoneet);
             this.Controls.Add(this.HuoneTyhjennaBTN);
             this.Controls.Add(this.HuonePoistaBTN);
             this.Controls.Add(this.UusiHuoneBTN);
@@ -234,7 +262,9 @@
             this.Load += new System.EventHandler(this.HallitseHuoneita_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVHuoneet)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +278,7 @@
         private System.Windows.Forms.Button UusiHuoneBTN;
         private System.Windows.Forms.Button HuonePoistaBTN;
         private System.Windows.Forms.Button HuoneTyhjennaBTN;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVHuoneet;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -256,6 +286,8 @@
         private System.Windows.Forms.TextBox HuoneenNumeroTB;
         private System.Windows.Forms.TextBox HuonePuhelinTB;
         private System.Windows.Forms.ComboBox HuoneenTyyppiCB;
-        private System.Windows.Forms.Label VapaaLB;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radioButtonEi;
+        private System.Windows.Forms.RadioButton radioButtonKylla;
     }
 }

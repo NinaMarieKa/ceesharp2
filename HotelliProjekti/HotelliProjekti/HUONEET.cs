@@ -38,14 +38,14 @@ namespace HotelliProjekti
             String lisaaKysely = "INSERT INTO `huoneet`(`numero`, `tyyppi`, `puhelin`, `vapaa`) VALUES (@num, @tpi, @phn, @vpa) ";
             komento.CommandText = lisaaKysely;
             komento.Connection = yht.OtaYhteytta();
-            
+
 
             //@num, @tpi, @phn, @vpa)
             komento.Parameters.Add("@num", MySqlDbType.Int32).Value = numero;
             komento.Parameters.Add("@tpi", MySqlDbType.Int32).Value = tyyppi;
             komento.Parameters.Add("@phn", MySqlDbType.VarChar).Value = puhelin;
             komento.Parameters.Add("@vpa", MySqlDbType.VarChar).Value = vapaa;
-          
+
             yht.AvaaYhteys();
             // Avataan ja suljetaan yhteys
             if (komento.ExecuteNonQuery() == 1)
@@ -60,7 +60,64 @@ namespace HotelliProjekti
                 return false;
             }
 
-           }
+            // Funktio valitun huoneen muokkaaamiseksi
+            public bool muokkaaHuonetta(int numero, int tyyppi, String puhelin, String vapaa)
+            {
+                MySqlCommand komento = new MySqlCommand();
+                String muokattuKysely = "UPDATE `huoneet`SET `tyyppi`= @tpi,`puhelin`= @phn,`vapaa`= @vpa WHERE `number` = @num";
+                komento.CommandText = muokattuKysely;
+                komento.Connection = yht.OtaYhteytta();
+                //komento.Parameters.Add("");
 
+                //@num, @tpi, @phn, @vpa)
+                komento.Parameters.Add("@num", MySqlDbType.Int32).Value = numero;
+                komento.Parameters.Add("@tpi", MySqlDbType.Int32).Value = tyyppi;
+                komento.Parameters.Add("@phn", MySqlDbType.VarChar).Value = puhelin;
+                komento.Parameters.Add("@vpa", MySqlDbType.VarChar).Value = vapaa;
+
+                yht.AvaaYhteys();
+
+                if (komento.ExecuteNonQuery() == 1)
+                {
+                    yht.SuljeYhteys();
+                    return true;
+
+                }
+                else
+                {
+                    yht.SuljeYhteys();
+                    return false;
+                } 
+            }
+
+            // Funktio huoneen poistamiseksi
+            public bool poistaHuone(int numero)
+            {
+                MySqlCommand komento = new MySqlCommand();
+                String poistaKysely = "DELETE FROM `huoneet` WHERE `numero`=@num";
+                komento.CommandText = poistaKysely;
+                komento.Connection = yht.OtaYhteytta();
+                //komento.Parameters.Add("");
+
+                //@num
+                komento.Parameters.Add("@num", MySqlDbType.VarChar).Value = numero;
+
+                yht.AvaaYhteys();
+                // Avataan ja suljetaan yhteys
+                if (komento.ExecuteNonQuery() == 1)
+                {
+                    yht.SuljeYhteys();
+                    return true;
+
+                }
+                else
+                {
+                    yht.SuljeYhteys();
+                    return false;
+                }
+            }
+
+        } 
         }
     }
+

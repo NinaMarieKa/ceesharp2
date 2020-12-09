@@ -85,7 +85,7 @@
             this.AsiakasData.RowTemplate.Height = 28;
             this.AsiakasData.Size = new System.Drawing.Size(559, 512);
             this.AsiakasData.TabIndex = 1;
-            this.AsiakasData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AsiakasData_CellContentClick);
+            this.AsiakasData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AsiakasData_CellClick);
             // 
             // AsiakasEtunimiLB
             // 

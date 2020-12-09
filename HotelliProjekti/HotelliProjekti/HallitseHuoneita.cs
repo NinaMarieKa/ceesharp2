@@ -23,8 +23,8 @@ namespace HotelliProjekti
             try
             {
                 HuoneenTyyppiCB.DataSource = huoneet.huoneTyyppiLista();
-                HuoneenTyyppiCB.DisplayMember = "`tyyppi`";
-                HuoneenTyyppiCB.ValueMember = "`idHuonetyyppi`";
+                HuoneenTyyppiCB.DisplayMember = "tyyppi";
+                HuoneenTyyppiCB.ValueMember = "idHuonetyyppi";
             }
             catch(Exception ex)
             {
@@ -52,12 +52,42 @@ namespace HotelliProjekti
 
         private void HuoneMuokkaaBTN_Click(object sender, EventArgs e)
         {
-
+            int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
+            int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
+            String puhelin = HuonePuhelinTB.Text;
+            String vapaa = ""; 
+             
+            if(radioButtonKylla.Checked)
+            {
+                vapaa = "KYLLÄ";
+            }
+            else if(radioButtonEi.Checked)
+            {
+                vapaa = "EI";
+            }
+            if (huoneet.muokkaaHuonetta(numero,tyyppi,puhelin,vapaa))
+            {
+                MessageBox.Show("Huonetta muokattu onnistuneesti", "Huonetta muokattu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Huoneen muokkaus epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
         }
 
         private void HuonePoistaBTN_Click(object sender, EventArgs e)
         {
+            int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
 
+            if (huoneet.poistaHuone(numero))
+            {
+                MessageBox.Show("Huone poistettu onnistuneesti", "Huone poistettu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Huoneen poistaminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void HuoneTyhjennaBTN_Click(object sender, EventArgs e)
@@ -65,6 +95,15 @@ namespace HotelliProjekti
             HuoneenNumeroTB.Text = "";
             HuoneenTyyppiCB.SelectedIndex = 0;
             HuonePuhelinTB.Text = "";
+        }
+        
+        // Näyttää valitun rivin tekstibokseissa 
+        private void dGVHuoneet_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HuoneenNumeroTB.Text = dGVHuoneet.CurrentRow.Cells[0].Value.ToString();
+            HuoneenTyyppiCB.SelectedValue = dGVHuoneet.CurrentRow.Cells[1].Value;
+            HuonePuhelinTB.Text = dGVHuoneet.CurrentRow.Cells[1].Value.ToString();
+
         }
     }
 }
