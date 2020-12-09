@@ -75,7 +75,7 @@
             this.HuoneMuokkaaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.HuoneMuokkaaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneMuokkaaBTN.ForeColor = System.Drawing.Color.White;
-            this.HuoneMuokkaaBTN.Location = new System.Drawing.Point(27, 486);
+            this.HuoneMuokkaaBTN.Location = new System.Drawing.Point(234, 486);
             this.HuoneMuokkaaBTN.Name = "HuoneMuokkaaBTN";
             this.HuoneMuokkaaBTN.Size = new System.Drawing.Size(145, 49);
             this.HuoneMuokkaaBTN.TabIndex = 18;
@@ -88,7 +88,7 @@
             this.UusiHuoneBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.UusiHuoneBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UusiHuoneBTN.ForeColor = System.Drawing.Color.White;
-            this.UusiHuoneBTN.Location = new System.Drawing.Point(178, 486);
+            this.UusiHuoneBTN.Location = new System.Drawing.Point(27, 486);
             this.UusiHuoneBTN.Name = "UusiHuoneBTN";
             this.UusiHuoneBTN.Size = new System.Drawing.Size(204, 49);
             this.UusiHuoneBTN.TabIndex = 19;

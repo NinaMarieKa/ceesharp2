@@ -146,7 +146,7 @@
             this.VarausMuokkaaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.VarausMuokkaaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VarausMuokkaaBTN.ForeColor = System.Drawing.Color.White;
-            this.VarausMuokkaaBTN.Location = new System.Drawing.Point(59, 501);
+            this.VarausMuokkaaBTN.Location = new System.Drawing.Point(284, 501);
             this.VarausMuokkaaBTN.Name = "VarausMuokkaaBTN";
             this.VarausMuokkaaBTN.Size = new System.Drawing.Size(159, 49);
             this.VarausMuokkaaBTN.TabIndex = 17;
@@ -158,7 +158,7 @@
             this.UusiVarausBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.UusiVarausBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UusiVarausBTN.ForeColor = System.Drawing.Color.White;
-            this.UusiVarausBTN.Location = new System.Drawing.Point(221, 501);
+            this.UusiVarausBTN.Location = new System.Drawing.Point(59, 501);
             this.UusiVarausBTN.Name = "UusiVarausBTN";
             this.UusiVarausBTN.Size = new System.Drawing.Size(222, 49);
             this.UusiVarausBTN.TabIndex = 18;
