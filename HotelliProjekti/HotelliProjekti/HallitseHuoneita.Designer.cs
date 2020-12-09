@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1177, 100);
+            this.panel1.Size = new System.Drawing.Size(1177, 79);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(449, 26);
+            this.label1.Location = new System.Drawing.Point(417, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(315, 46);
             this.label1.TabIndex = 1;
@@ -75,9 +75,9 @@
             this.HuoneMuokkaaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.HuoneMuokkaaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneMuokkaaBTN.ForeColor = System.Drawing.Color.White;
-            this.HuoneMuokkaaBTN.Location = new System.Drawing.Point(30, 534);
+            this.HuoneMuokkaaBTN.Location = new System.Drawing.Point(27, 486);
             this.HuoneMuokkaaBTN.Name = "HuoneMuokkaaBTN";
-            this.HuoneMuokkaaBTN.Size = new System.Drawing.Size(161, 49);
+            this.HuoneMuokkaaBTN.Size = new System.Drawing.Size(145, 49);
             this.HuoneMuokkaaBTN.TabIndex = 18;
             this.HuoneMuokkaaBTN.Text = "Muokkaa";
             this.HuoneMuokkaaBTN.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@
             this.UusiHuoneBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.UusiHuoneBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UusiHuoneBTN.ForeColor = System.Drawing.Color.White;
-            this.UusiHuoneBTN.Location = new System.Drawing.Point(197, 534);
+            this.UusiHuoneBTN.Location = new System.Drawing.Point(178, 486);
             this.UusiHuoneBTN.Name = "UusiHuoneBTN";
-            this.UusiHuoneBTN.Size = new System.Drawing.Size(222, 49);
+            this.UusiHuoneBTN.Size = new System.Drawing.Size(204, 49);
             this.UusiHuoneBTN.TabIndex = 19;
             this.UusiHuoneBTN.Text = "Lisää uusi huone";
             this.UusiHuoneBTN.UseVisualStyleBackColor = false;
@@ -101,9 +101,9 @@
             this.HuonePoistaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.HuonePoistaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuonePoistaBTN.ForeColor = System.Drawing.Color.White;
-            this.HuonePoistaBTN.Location = new System.Drawing.Point(425, 534);
+            this.HuonePoistaBTN.Location = new System.Drawing.Point(388, 486);
             this.HuonePoistaBTN.Name = "HuonePoistaBTN";
-            this.HuonePoistaBTN.Size = new System.Drawing.Size(147, 49);
+            this.HuonePoistaBTN.Size = new System.Drawing.Size(132, 49);
             this.HuonePoistaBTN.TabIndex = 20;
             this.HuonePoistaBTN.Text = "Poista";
             this.HuonePoistaBTN.UseVisualStyleBackColor = false;
@@ -114,9 +114,9 @@
             this.HuoneTyhjennaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.HuoneTyhjennaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneTyhjennaBTN.ForeColor = System.Drawing.Color.White;
-            this.HuoneTyhjennaBTN.Location = new System.Drawing.Point(30, 606);
+            this.HuoneTyhjennaBTN.Location = new System.Drawing.Point(27, 541);
             this.HuoneTyhjennaBTN.Name = "HuoneTyhjennaBTN";
-            this.HuoneTyhjennaBTN.Size = new System.Drawing.Size(542, 55);
+            this.HuoneTyhjennaBTN.Size = new System.Drawing.Size(493, 55);
             this.HuoneTyhjennaBTN.TabIndex = 21;
             this.HuoneTyhjennaBTN.Text = "Tyhjennä kentät";
             this.HuoneTyhjennaBTN.UseVisualStyleBackColor = false;
@@ -124,12 +124,13 @@
             // 
             // dGVHuoneet
             // 
+            this.dGVHuoneet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVHuoneet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVHuoneet.Location = new System.Drawing.Point(607, 147);
+            this.dGVHuoneet.Location = new System.Drawing.Point(545, 89);
             this.dGVHuoneet.Name = "dGVHuoneet";
             this.dGVHuoneet.RowHeadersWidth = 62;
             this.dGVHuoneet.RowTemplate.Height = 28;
-            this.dGVHuoneet.Size = new System.Drawing.Size(542, 523);
+            this.dGVHuoneet.Size = new System.Drawing.Size(586, 523);
             this.dGVHuoneet.TabIndex = 22;
             this.dGVHuoneet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHuoneet_CellClick);
             // 
@@ -178,7 +179,7 @@
             this.HuoneenNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneenNumeroTB.Location = new System.Drawing.Point(222, 144);
             this.HuoneenNumeroTB.Name = "HuoneenNumeroTB";
-            this.HuoneenNumeroTB.Size = new System.Drawing.Size(246, 35);
+            this.HuoneenNumeroTB.Size = new System.Drawing.Size(298, 35);
             this.HuoneenNumeroTB.TabIndex = 29;
             // 
             // HuonePuhelinTB
@@ -186,7 +187,7 @@
             this.HuonePuhelinTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuonePuhelinTB.Location = new System.Drawing.Point(222, 282);
             this.HuonePuhelinTB.Name = "HuonePuhelinTB";
-            this.HuonePuhelinTB.Size = new System.Drawing.Size(246, 35);
+            this.HuonePuhelinTB.Size = new System.Drawing.Size(298, 35);
             this.HuonePuhelinTB.TabIndex = 31;
             // 
             // HuoneenTyyppiCB
@@ -196,7 +197,7 @@
             this.HuoneenTyyppiCB.FormattingEnabled = true;
             this.HuoneenTyyppiCB.Location = new System.Drawing.Point(222, 217);
             this.HuoneenTyyppiCB.Name = "HuoneenTyyppiCB";
-            this.HuoneenTyyppiCB.Size = new System.Drawing.Size(246, 37);
+            this.HuoneenTyyppiCB.Size = new System.Drawing.Size(298, 37);
             this.HuoneenTyyppiCB.TabIndex = 32;
             // 
             // panel2
@@ -206,12 +207,13 @@
             this.panel2.Controls.Add(this.radioButtonKylla);
             this.panel2.Location = new System.Drawing.Point(222, 341);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 60);
+            this.panel2.Size = new System.Drawing.Size(298, 60);
             this.panel2.TabIndex = 34;
             // 
             // radioButtonKylla
             // 
             this.radioButtonKylla.AutoSize = true;
+            this.radioButtonKylla.Checked = true;
             this.radioButtonKylla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonKylla.ForeColor = System.Drawing.Color.Green;
             this.radioButtonKylla.Location = new System.Drawing.Point(12, 14);
@@ -240,7 +242,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1178, 706);
+            this.ClientSize = new System.Drawing.Size(1142, 638);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.HuoneenTyyppiCB);
             this.Controls.Add(this.HuonePuhelinTB);

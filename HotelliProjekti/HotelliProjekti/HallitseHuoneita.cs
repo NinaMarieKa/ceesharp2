@@ -25,6 +25,8 @@ namespace HotelliProjekti
                 HuoneenTyyppiCB.DataSource = huoneet.huoneTyyppiLista();
                 HuoneenTyyppiCB.DisplayMember = "tyyppi";
                 HuoneenTyyppiCB.ValueMember = "idHuonetyyppi";
+
+                dGVHuoneet.DataSource = huoneet.haeHuoneet();
             }
             catch(Exception ex)
             {
@@ -35,59 +37,98 @@ namespace HotelliProjekti
 
         private void UusiHuoneBTN_Click(object sender, EventArgs e)
         {
-            int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
-            int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.Text);
+            
+            
+            int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
             string puhelin = HuonePuhelinTB.Text;
+            string vapaa = "";
 
-            if(huoneet.lisaaHuone(numero, tyyppi, puhelin, "Kyllä"))
+            try
             {
-                MessageBox.Show("Huone lisätty onnistuneesti", "Huone lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
+                if (radioButtonKylla.Checked)
+                {
+                    vapaa = "Kyllä";
+                }
+                else if (radioButtonEi.Checked)
+                {
+                    vapaa = "Ei";
+                }
+
+                if (huoneet.lisaaHuone(numero, tyyppi, puhelin, vapaa))
+                {
+                    dGVHuoneet.DataSource = huoneet.haeHuoneet();
+                    MessageBox.Show("Huone lisätty onnistuneesti", "Huone lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Huoneen lisäys epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Huoneen lisäys epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
         private void HuoneMuokkaaBTN_Click(object sender, EventArgs e)
         {
-            int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
             int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
             String puhelin = HuonePuhelinTB.Text;
             String vapaa = ""; 
+            
+            try
+            {
+                int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
+                if (radioButtonKylla.Checked)
+                {
+                    vapaa = "KYLLÄ";
+                }
+                else if (radioButtonEi.Checked)
+                {
+                    vapaa = "EI";
+                }
+                if (huoneet.muokkaaHuonetta(numero, tyyppi, puhelin, vapaa))
+                {
+                    dGVHuoneet.DataSource = huoneet.haeHuoneet();
+                    MessageBox.Show("Huonetta muokattu onnistuneesti", "Huonetta muokattu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Huoneen muokkaus epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
              
-            if(radioButtonKylla.Checked)
-            {
-                vapaa = "KYLLÄ";
-            }
-            else if(radioButtonEi.Checked)
-            {
-                vapaa = "EI";
-            }
-            if (huoneet.muokkaaHuonetta(numero,tyyppi,puhelin,vapaa))
-            {
-                MessageBox.Show("Huonetta muokattu onnistuneesti", "Huonetta muokattu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Huoneen muokkaus epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
                 
         }
 
         private void HuonePoistaBTN_Click(object sender, EventArgs e)
-        {
-            int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
+        { 
+            try
+            {
+                int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
 
-            if (huoneet.poistaHuone(numero))
-            {
-                MessageBox.Show("Huone poistettu onnistuneesti", "Huone poistettu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (huoneet.poistaHuone(numero))
+                {
+                    dGVHuoneet.DataSource = huoneet.haeHuoneet();
+                    MessageBox.Show("Huone poistettu onnistuneesti", "Huone poistettu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Huoneen poistaminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Huoneen poistaminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void HuoneTyhjennaBTN_Click(object sender, EventArgs e)
@@ -95,6 +136,7 @@ namespace HotelliProjekti
             HuoneenNumeroTB.Text = "";
             HuoneenTyyppiCB.SelectedIndex = 0;
             HuonePuhelinTB.Text = "";
+            radioButtonKylla.Checked = true;
         }
         
         // Näyttää valitun rivin tekstibokseissa 
@@ -102,8 +144,18 @@ namespace HotelliProjekti
         {
             HuoneenNumeroTB.Text = dGVHuoneet.CurrentRow.Cells[0].Value.ToString();
             HuoneenTyyppiCB.SelectedValue = dGVHuoneet.CurrentRow.Cells[1].Value;
-            HuonePuhelinTB.Text = dGVHuoneet.CurrentRow.Cells[1].Value.ToString();
+            HuonePuhelinTB.Text = dGVHuoneet.CurrentRow.Cells[2].Value.ToString();
 
+            string vapaa = dGVHuoneet.CurrentRow.Cells[2].Value.ToString();
+
+            if(vapaa.Equals("Kyllä"))
+            {
+                radioButtonKylla.Checked = true;
+            }
+            else if(vapaa.Equals("Ei"))
+            {
+                radioButtonEi.Checked = true;
+            }
         }
     }
 }

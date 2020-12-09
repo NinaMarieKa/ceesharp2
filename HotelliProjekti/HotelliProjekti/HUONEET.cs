@@ -59,9 +59,22 @@ namespace HotelliProjekti
                 yht.SuljeYhteys();
                 return false;
             }
+        }
 
-            // Funktio valitun huoneen muokkaaamiseksi
-            public bool muokkaaHuonetta(int numero, int tyyppi, String puhelin, String vapaa)
+        // Funktio joka hakee kaikki huoneet
+        public DataTable haeHuoneet()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huoneet`", yht.OtaYhteytta());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+            return taulu;
+        }
+
+        // Funktio valitun huoneen muokkaaamiseksi
+        public bool muokkaaHuonetta(int numero, int tyyppi, String puhelin, String vapaa)
             {
                 MySqlCommand komento = new MySqlCommand();
                 String muokattuKysely = "UPDATE `huoneet`SET `tyyppi`= @tpi,`puhelin`= @phn,`vapaa`= @vpa WHERE `number` = @num";
@@ -119,5 +132,6 @@ namespace HotelliProjekti
 
         } 
         }
-    }
+    
+
 

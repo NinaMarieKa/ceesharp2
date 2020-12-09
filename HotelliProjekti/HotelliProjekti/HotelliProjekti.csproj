@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VARAUKSET.cs" />
     <Compile Include="YHDISTA.cs" />
     <EmbeddedResource Include="Kirjautumisikkuna.resx">
       <DependentUpon>Kirjautumisikkuna.cs</DependentUpon>
