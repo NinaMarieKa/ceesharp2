@@ -31,5 +31,36 @@ namespace HotelliProjekti
 
         }
 
+        // Funktio uuden huoneen lisäämiseksi
+        public bool lisaaHuone(int numero, int tyyppi, String puhelin, String vapaa)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String lisaaKysely = "INSERT INTO `huoneet`(`numero`, `tyyppi`, `puhelin`, `vapaa`) VALUES (@num, @tpi, @phn, @vpa) ";
+            komento.CommandText = lisaaKysely;
+            komento.Connection = yht.OtaYhteytta();
+            
+
+            //@num, @tpi, @phn, @vpa)
+            komento.Parameters.Add("@num", MySqlDbType.Int32).Value = numero;
+            komento.Parameters.Add("@tpi", MySqlDbType.Int32).Value = tyyppi;
+            komento.Parameters.Add("@phn", MySqlDbType.VarChar).Value = puhelin;
+            komento.Parameters.Add("@vpa", MySqlDbType.VarChar).Value = vapaa;
+          
+            yht.AvaaYhteys();
+            // Avataan ja suljetaan yhteys
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yht.SuljeYhteys();
+                return true;
+
+            }
+            else
+            {
+                yht.SuljeYhteys();
+                return false;
+            }
+
+           }
+
+        }
     }
-}

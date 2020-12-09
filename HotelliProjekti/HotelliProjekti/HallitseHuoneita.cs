@@ -20,11 +20,51 @@ namespace HotelliProjekti
         HUONEET huoneet = new HUONEET();
         private void HallitseHuoneita_Load(object sender, EventArgs e)
         {
-            HuoneenTyyppiCB.DataSource = huoneet.huoneTyyppiLista();
-            HuoneenTyyppiCB.DisplayMember = "";
-            HuoneenTyyppiCB.ValueMember = "";
+            try
+            {
+                HuoneenTyyppiCB.DataSource = huoneet.huoneTyyppiLista();
+                HuoneenTyyppiCB.DisplayMember = "`tyyppi`";
+                HuoneenTyyppiCB.ValueMember = "`idHuonetyyppi`";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
 
+        private void UusiHuoneBTN_Click(object sender, EventArgs e)
+        {
+            int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
+            int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.Text);
+            string puhelin = HuonePuhelinTB.Text;
+
+            if(huoneet.lisaaHuone(numero, tyyppi, puhelin, "Kyllä"))
+            {
+                MessageBox.Show("Huone lisätty onnistuneesti", "Huone lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Huoneen lisäys epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void HuoneMuokkaaBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HuonePoistaBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HuoneTyhjennaBTN_Click(object sender, EventArgs e)
+        {
+            HuoneenNumeroTB.Text = "";
+            HuoneenTyyppiCB.SelectedIndex = 0;
+            HuonePuhelinTB.Text = "";
         }
     }
 }
