@@ -31,6 +31,22 @@ namespace HotelliProjekti
 
         }
 
+        // Näyttää huoneen numeron valitun huonetyypin mukaan
+        public DataTable huoneTyypinMukaan(int tyyppi)
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huoneet` WHERE `tyyppi`=@tpi", yht.OtaYhteytta());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            komento.Parameters.Add("@tpi", MySqlDbType.Int32).Value = tyyppi;
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+
+            return taulu;
+
+        }
+
         // Funktio uuden huoneen lisäämiseksi
         public bool lisaaHuone(int numero, int tyyppi, String puhelin, String vapaa)
         {
