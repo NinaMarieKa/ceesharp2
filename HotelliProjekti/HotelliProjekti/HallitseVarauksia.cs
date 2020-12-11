@@ -84,7 +84,7 @@ namespace HotelliProjekti
                 else
                 {
                     // Määritetään huoneen vapaus = EI
-                    huoneet.huoneEiVapaa(numero);
+                    huoneet.huoneEiVapaa(hnumero);
                     if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
                     {
 
@@ -124,7 +124,7 @@ namespace HotelliProjekti
                 else
                 {
                     // Määritetään huoneen vapaus = EI
-                    huoneet.huoneEiVapaa(numero);
+                    huoneet.huoneEiVapaa(hnumero);
                     if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
                     {
 
@@ -148,8 +148,12 @@ namespace HotelliProjekti
 
         
 
-// Ohjelma kaatuu asiakasta lisättäessä, muokattaessa ja poistaessa,
-// samaa huoneiden kanssa, varauksissa oli myös ongelmia..
+// Ongelmia asiakasta lisättäessä, muokattaessa ja poistaessa,
+//
+// "You have an error in your SQL syntax; check the manual that corresponds to
+// your MariaDB server version for the righ syntax to use near "WHERE Ktunnus= " at line 1"
+//
+// Ongelmia myös huoneiden kanssa, varauksissa oli myös ongelmia..
 // Salasanojen suolaus ohjelma ladattu, ei vielä käytetty
 // Kuinka tehtiin se, että ohjelma luo käyttäjätunnukset ja salasanat automaattisesti?
 
