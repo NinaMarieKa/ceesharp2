@@ -140,6 +140,7 @@
             this.VarausMuokkaaBTN.TabIndex = 17;
             this.VarausMuokkaaBTN.Text = "Muokkaa";
             this.VarausMuokkaaBTN.UseVisualStyleBackColor = false;
+            this.VarausMuokkaaBTN.Click += new System.EventHandler(this.VarausMuokkaaBTN_Click);
             // 
             // UusiVarausBTN
             // 

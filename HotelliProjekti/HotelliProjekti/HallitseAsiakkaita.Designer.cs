@@ -91,7 +91,7 @@
             // 
             this.AsiakasEtunimiLB.AutoSize = true;
             this.AsiakasEtunimiLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasEtunimiLB.Location = new System.Drawing.Point(28, 158);
+            this.AsiakasEtunimiLB.Location = new System.Drawing.Point(28, 203);
             this.AsiakasEtunimiLB.Name = "AsiakasEtunimiLB";
             this.AsiakasEtunimiLB.Size = new System.Drawing.Size(99, 29);
             this.AsiakasEtunimiLB.TabIndex = 2;
@@ -101,7 +101,7 @@
             // 
             this.AsiakasSukunimiLB.AutoSize = true;
             this.AsiakasSukunimiLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasSukunimiLB.Location = new System.Drawing.Point(28, 215);
+            this.AsiakasSukunimiLB.Location = new System.Drawing.Point(28, 257);
             this.AsiakasSukunimiLB.Name = "AsiakasSukunimiLB";
             this.AsiakasSukunimiLB.Size = new System.Drawing.Size(118, 29);
             this.AsiakasSukunimiLB.TabIndex = 3;
@@ -111,7 +111,7 @@
             // 
             this.AsiakasOsoiteLB.AutoSize = true;
             this.AsiakasOsoiteLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasOsoiteLB.Location = new System.Drawing.Point(28, 270);
+            this.AsiakasOsoiteLB.Location = new System.Drawing.Point(28, 306);
             this.AsiakasOsoiteLB.Name = "AsiakasOsoiteLB";
             this.AsiakasOsoiteLB.Size = new System.Drawing.Size(130, 29);
             this.AsiakasOsoiteLB.TabIndex = 4;
@@ -121,7 +121,7 @@
             // 
             this.AsiakasPostinumeroLB.AutoSize = true;
             this.AsiakasPostinumeroLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasPostinumeroLB.Location = new System.Drawing.Point(28, 332);
+            this.AsiakasPostinumeroLB.Location = new System.Drawing.Point(28, 356);
             this.AsiakasPostinumeroLB.Name = "AsiakasPostinumeroLB";
             this.AsiakasPostinumeroLB.Size = new System.Drawing.Size(155, 29);
             this.AsiakasPostinumeroLB.TabIndex = 5;
@@ -131,7 +131,7 @@
             // 
             this.AsiakasToimipaikkaLB.AutoSize = true;
             this.AsiakasToimipaikkaLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasToimipaikkaLB.Location = new System.Drawing.Point(28, 392);
+            this.AsiakasToimipaikkaLB.Location = new System.Drawing.Point(28, 408);
             this.AsiakasToimipaikkaLB.Name = "AsiakasToimipaikkaLB";
             this.AsiakasToimipaikkaLB.Size = new System.Drawing.Size(195, 29);
             this.AsiakasToimipaikkaLB.TabIndex = 6;
@@ -141,7 +141,7 @@
             // 
             this.AsiakasKayttajaLB.AutoSize = true;
             this.AsiakasKayttajaLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasKayttajaLB.Location = new System.Drawing.Point(28, 453);
+            this.AsiakasKayttajaLB.Location = new System.Drawing.Point(28, 459);
             this.AsiakasKayttajaLB.Name = "AsiakasKayttajaLB";
             this.AsiakasKayttajaLB.Size = new System.Drawing.Size(173, 29);
             this.AsiakasKayttajaLB.TabIndex = 7;
@@ -151,7 +151,7 @@
             // 
             this.AsiakasSalasanaLB.AutoSize = true;
             this.AsiakasSalasanaLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasSalasanaLB.Location = new System.Drawing.Point(28, 514);
+            this.AsiakasSalasanaLB.Location = new System.Drawing.Point(28, 508);
             this.AsiakasSalasanaLB.Name = "AsiakasSalasanaLB";
             this.AsiakasSalasanaLB.Size = new System.Drawing.Size(118, 29);
             this.AsiakasSalasanaLB.TabIndex = 8;
@@ -160,7 +160,7 @@
             // AsiakasEtunimiTB
             // 
             this.AsiakasEtunimiTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasEtunimiTB.Location = new System.Drawing.Point(248, 158);
+            this.AsiakasEtunimiTB.Location = new System.Drawing.Point(248, 200);
             this.AsiakasEtunimiTB.Name = "AsiakasEtunimiTB";
             this.AsiakasEtunimiTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasEtunimiTB.TabIndex = 9;
@@ -168,7 +168,7 @@
             // AsiakasSukunimiTB
             // 
             this.AsiakasSukunimiTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasSukunimiTB.Location = new System.Drawing.Point(248, 212);
+            this.AsiakasSukunimiTB.Location = new System.Drawing.Point(248, 254);
             this.AsiakasSukunimiTB.Name = "AsiakasSukunimiTB";
             this.AsiakasSukunimiTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasSukunimiTB.TabIndex = 10;
@@ -176,7 +176,7 @@
             // AsiakasOsoiteTB
             // 
             this.AsiakasOsoiteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasOsoiteTB.Location = new System.Drawing.Point(248, 267);
+            this.AsiakasOsoiteTB.Location = new System.Drawing.Point(248, 303);
             this.AsiakasOsoiteTB.Name = "AsiakasOsoiteTB";
             this.AsiakasOsoiteTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasOsoiteTB.TabIndex = 11;
@@ -184,16 +184,16 @@
             // AsiakasPostinumeroTB
             // 
             this.AsiakasPostinumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasPostinumeroTB.Location = new System.Drawing.Point(248, 329);
+            this.AsiakasPostinumeroTB.Location = new System.Drawing.Point(248, 353);
             this.AsiakasPostinumeroTB.Name = "AsiakasPostinumeroTB";
             this.AsiakasPostinumeroTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasPostinumeroTB.TabIndex = 12;
-            this.AsiakasPostinumeroTB.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            
             // 
             // AsiakasToimipaikkaTB
             // 
             this.AsiakasToimipaikkaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasToimipaikkaTB.Location = new System.Drawing.Point(248, 389);
+            this.AsiakasToimipaikkaTB.Location = new System.Drawing.Point(248, 405);
             this.AsiakasToimipaikkaTB.Name = "AsiakasToimipaikkaTB";
             this.AsiakasToimipaikkaTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasToimipaikkaTB.TabIndex = 13;
@@ -201,16 +201,16 @@
             // AsiakasKayttajaTB
             // 
             this.AsiakasKayttajaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasKayttajaTB.Location = new System.Drawing.Point(248, 450);
+            this.AsiakasKayttajaTB.Location = new System.Drawing.Point(248, 456);
             this.AsiakasKayttajaTB.Name = "AsiakasKayttajaTB";
             this.AsiakasKayttajaTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasKayttajaTB.TabIndex = 14;
-            this.AsiakasKayttajaTB.TextChanged += new System.EventHandler(this.AsiakasKayttajaTB_TextChanged);
+           
             // 
             // AsiakasSalasanaTB
             // 
             this.AsiakasSalasanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasSalasanaTB.Location = new System.Drawing.Point(248, 511);
+            this.AsiakasSalasanaTB.Location = new System.Drawing.Point(248, 505);
             this.AsiakasSalasanaTB.Name = "AsiakasSalasanaTB";
             this.AsiakasSalasanaTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasSalasanaTB.TabIndex = 15;
@@ -220,7 +220,7 @@
             this.AsiakasMuokkaaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.AsiakasMuokkaaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasMuokkaaBTN.ForeColor = System.Drawing.Color.White;
-            this.AsiakasMuokkaaBTN.Location = new System.Drawing.Point(130, 574);
+            this.AsiakasMuokkaaBTN.Location = new System.Drawing.Point(320, 556);
             this.AsiakasMuokkaaBTN.Name = "AsiakasMuokkaaBTN";
             this.AsiakasMuokkaaBTN.Size = new System.Drawing.Size(131, 44);
             this.AsiakasMuokkaaBTN.TabIndex = 16;
@@ -233,7 +233,7 @@
             this.UusiAsiakasBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.UusiAsiakasBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UusiAsiakasBTN.ForeColor = System.Drawing.Color.White;
-            this.UusiAsiakasBTN.Location = new System.Drawing.Point(267, 574);
+            this.UusiAsiakasBTN.Location = new System.Drawing.Point(92, 556);
             this.UusiAsiakasBTN.Name = "UusiAsiakasBTN";
             this.UusiAsiakasBTN.Size = new System.Drawing.Size(222, 44);
             this.UusiAsiakasBTN.TabIndex = 17;
@@ -246,7 +246,7 @@
             this.AsiakasPoistaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.AsiakasPoistaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasPoistaBTN.ForeColor = System.Drawing.Color.White;
-            this.AsiakasPoistaBTN.Location = new System.Drawing.Point(495, 574);
+            this.AsiakasPoistaBTN.Location = new System.Drawing.Point(457, 556);
             this.AsiakasPoistaBTN.Name = "AsiakasPoistaBTN";
             this.AsiakasPoistaBTN.Size = new System.Drawing.Size(84, 44);
             this.AsiakasPoistaBTN.TabIndex = 18;
@@ -259,9 +259,9 @@
             this.AsiakasTyhjennaBTN.BackColor = System.Drawing.Color.RosyBrown;
             this.AsiakasTyhjennaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasTyhjennaBTN.ForeColor = System.Drawing.Color.White;
-            this.AsiakasTyhjennaBTN.Location = new System.Drawing.Point(357, 624);
+            this.AsiakasTyhjennaBTN.Location = new System.Drawing.Point(92, 615);
             this.AsiakasTyhjennaBTN.Name = "AsiakasTyhjennaBTN";
-            this.AsiakasTyhjennaBTN.Size = new System.Drawing.Size(222, 43);
+            this.AsiakasTyhjennaBTN.Size = new System.Drawing.Size(449, 52);
             this.AsiakasTyhjennaBTN.TabIndex = 19;
             this.AsiakasTyhjennaBTN.Text = "Tyhjennä kentät";
             this.AsiakasTyhjennaBTN.UseVisualStyleBackColor = false;

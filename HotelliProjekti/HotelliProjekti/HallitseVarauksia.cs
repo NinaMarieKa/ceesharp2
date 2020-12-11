@@ -16,7 +16,7 @@ namespace HotelliProjekti
         {
             InitializeComponent();
         }
-
+        // Yhdistetään luokkiin
         HUONEET huoneet = new HUONEET();
 
         VARAUKSET varaukset = new VARAUKSET();
@@ -34,16 +34,16 @@ namespace HotelliProjekti
             VarausHuoneenNumeroCB.DisplayMember = "numero";
             VarausHuoneenNumeroCB.ValueMember = "numero";
 
-            
-        }
 
+        }
+        // Tyhjennetään kentät
         private void VarausTyhjennaBTN_Click(object sender, EventArgs e)
         {
             VarausAsNumeroTB.Text = "";
             VarausHuoneenNumeroCB.SelectedIndex = 0;
             dateTimeSisaan.Value = DateTime.Now;
             dateTimeUlos.Value = DateTime.Now;
-            
+
         }
 
         private void HuoneenTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,33 +57,102 @@ namespace HotelliProjekti
                 VarausHuoneenNumeroCB.ValueMember = "numero";
 
             }
-            catch(Exception)
+            catch (Exception)
             {
                 // ei tee mitään
             }
         }
 
+        // Uusi varaus- painikkeen toiminnot
         private void UusiVarausBTN_Click(object sender, EventArgs e)
         {
-            int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
-            int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
-            DateTime sisaanKirj = dateTimeSisaan.Value;
-            DateTime ulosKirj = dateTimeUlos.Value;
+            try
+            {
+                int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
+                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                DateTime sisaanKirj = dateTimeSisaan.Value;
+                DateTime ulosKirj = dateTimeUlos.Value;
 
-            if(varaukset.lisaaVaraus(hnumero,anumero,sisaanKirj,ulosKirj))
-            {
-                MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (sisaanKirj < DateTime.Now)
+                {
+                    MessageBox.Show("Sisään kirjautumisajankohta voi olla aikaisintaan tänään", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (ulosKirj < sisaanKirj)
+                {
+                    MessageBox.Show("Ulos kirjautumisajankohta ei voi olla ennen sisäänkirjautumista", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Määritetään huoneen vapaus = EI
+                    huoneet.huoneEiVapaa(numero);
+                    if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
+                    {
+
+                        MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Varauksen tekeminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            else
+
+            catch (Exception ex)
             {
-                MessageBox.Show("Varauksen tekeminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Varausten muokkaaminen
+        private void VarausMuokkaaBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
+                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                DateTime sisaanKirj = dateTimeSisaan.Value;
+                DateTime ulosKirj = dateTimeUlos.Value;
+
+                if (sisaanKirj < DateTime.Now)
+                {
+                    MessageBox.Show("Sisään kirjautumisajankohta voi olla aikaisintaan tänään", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (ulosKirj < sisaanKirj)
+                {
+                    MessageBox.Show("Ulos kirjautumisajankohta ei voi olla ennen sisäänkirjautumista", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Määritetään huoneen vapaus = EI
+                    huoneet.huoneEiVapaa(numero);
+                    if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
+                    {
+
+                        MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Varauksen tekeminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
-// Varaus ei näy asiakas- taulussa asiakkaan kohdalla
-// Huoneita myös mahdollista varata päällekkäin
+
+
+        
+
+// Ohjelma kaatuu asiakasta lisättäessä, muokattaessa ja poistaessa,
+// samaa huoneiden kanssa, varauksissa oli myös ongelmia..
+// Salasanojen suolaus ohjelma ladattu, ei vielä käytetty
+// Kuinka tehtiin se, että ohjelma luo käyttäjätunnukset ja salasanat automaattisesti?
 
 //ALTER TABLE huoneet add CONSTRAINT fk_tyyppi_id FOREIGN KEY (tyyppi) REFERENCES huone_tyypit (idHuonetyyppi) on UPDATE CASCADE on DELETE CASCADE;
 //ALTER TABLE varaukset add CONSTRAINT fk_huoneen_numero FOREIGN KEY (huoneenNumero) REFERENCES huoneet (numero) on UPDATE CASCADE on DELETE CASCADE;
-//
+// En onnistunut kolmannessa linkityksessä, tein täysin videon ohjeen mukaan, mutta siltikin jokin virhe

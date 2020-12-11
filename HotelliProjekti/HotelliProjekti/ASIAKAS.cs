@@ -27,7 +27,7 @@ namespace HotelliProjekti
             "VALUES(@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa); ";
             komento.CommandText = lisaaKysely;
             komento.Connection = yht.OtaYhteytta();
-            //komento.Parameters.Add("");
+          
 
             //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
             komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
@@ -78,7 +78,7 @@ namespace HotelliProjekti
             "VALUES(@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa); " + "WHERE Ktunnus =@ktu";
         komento.CommandText = muokattuKysely;
         komento.Connection = yht.OtaYhteytta();
-        //komento.Parameters.Add("");
+        
 
             //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
         komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
@@ -105,14 +105,15 @@ namespace HotelliProjekti
 
         
        }
-
+        // Funktio asiakkaan poistamiseksi
         public bool poistaAsiakas(String ktunnus)
         {
             MySqlCommand komento = new MySqlCommand();
+            // Mitä poistetaan ja mistä ..  Pitäisikö tässä olla ktunnus vaihdettu -> asiakasID?
             String poistaKysely = "DELETE FROM `asiakkaat` WHERE `Ktunnus`=@ktu";
             komento.CommandText = poistaKysely;
             komento.Connection = yht.OtaYhteytta();
-            //komento.Parameters.Add("");
+            
 
             //@ktu
             komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;

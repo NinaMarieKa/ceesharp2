@@ -16,7 +16,7 @@ namespace HotelliProjekti
         {
             InitializeComponent();
         }
-
+        // Yhdistetään luokkaan
         HUONEET huoneet = new HUONEET();
         private void HallitseHuoneita_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace HotelliProjekti
             }
 
         }
-
+        // Uuden huoneen lisääminen
         private void UusiHuoneBTN_Click(object sender, EventArgs e)
         {
             
@@ -72,6 +72,7 @@ namespace HotelliProjekti
 
         }
 
+        // Huoneen muokkaus
         private void HuoneMuokkaaBTN_Click(object sender, EventArgs e)
         {
             int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
@@ -108,6 +109,7 @@ namespace HotelliProjekti
                 
         }
 
+        // Huoneen poistaminen
         private void HuonePoistaBTN_Click(object sender, EventArgs e)
         { 
             try
@@ -131,6 +133,7 @@ namespace HotelliProjekti
 
         }
 
+        // Kenttien tyhjentäminen
         private void HuoneTyhjennaBTN_Click(object sender, EventArgs e)
         {
             HuoneenNumeroTB.Text = "";

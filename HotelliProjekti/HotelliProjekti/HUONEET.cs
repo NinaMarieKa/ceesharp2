@@ -34,7 +34,7 @@ namespace HotelliProjekti
         // Näyttää huoneen numeron valitun huonetyypin mukaan
         public DataTable huoneTyypinMukaan(int tyyppi)
         {
-            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huoneet` WHERE `tyyppi`=@tpi", yht.OtaYhteytta());
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huoneet` WHERE `tyyppi`=@tpi and vapaa=`Kyllä`", yht.OtaYhteytta());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
@@ -46,6 +46,32 @@ namespace HotelliProjekti
             return taulu;
 
         }
+
+        // Funktio, joka muuttaa vapaa = EI
+        public bool huoneEiVapaa(int numero)
+        {
+            MySqlCommand komento = new MySqlCommand("UPDATE `huoneet` SET `vapaa`=`Ei` WHERE `numero`=@num", yht.OtaYhteytta());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            komento.Parameters.Add("@num", MySqlDbType.Int32).Value = numero;
+
+            yht.AvaaYhteys();
+
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yht.SuljeYhteys();
+                return true;
+            }
+            else
+            {
+                yht.SuljeYhteys();
+                return false;
+            }
+
+
+        }
+
 
         // Funktio uuden huoneen lisäämiseksi
         public bool lisaaHuone(int numero, int tyyppi, String puhelin, String vapaa)

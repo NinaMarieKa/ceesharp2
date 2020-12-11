@@ -22,7 +22,7 @@ namespace HotelliProjekti
             this.Close();
             Application.Exit();
         }
-
+        // Ulkoasua, samaa kuin kirjautumissivulla..
         private void SuljePaasivuLB_MouseEnter(object sender, EventArgs e)
         {
             SuljePaasivuLB.ForeColor = Color.Black;
@@ -43,7 +43,7 @@ namespace HotelliProjekti
             HallitseAsiakkaita hallitseA = new HallitseAsiakkaita();
             hallitseA.Show();
         }
-
+        // Määritellään valikon painikkeiden toimintoja ja sivuilla siirtymistä, sama seuraavassa
         private void varaustenHallintaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HallitseVarauksia hallitseV = new HallitseVarauksia();

@@ -19,11 +19,8 @@ namespace HotelliProjekti
             InitializeComponent();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
+        // Tyhjennetään kentät, kun Tyhjennä kentät- painiketta klikataan
         private void AsiakasTyhjennaBTN_Click(object sender, EventArgs e)
         {
             AsiakasEtunimiTB.Text = "";
@@ -36,6 +33,7 @@ namespace HotelliProjekti
 
         }
 
+        // Määritetään mitä tapahtuu, kun klikataan Lisää uusi asiakas- painiketta
         private void UusiAsiakasBTN_Click(object sender, EventArgs e)
         {
             String enimi = AsiakasEtunimiTB.Text;
@@ -64,11 +62,13 @@ namespace HotelliProjekti
             }
         }
 
+        // Haetaan asiakaslista 
         private void HallitseAsiakkaita_Load(object sender, EventArgs e)
         {
             AsiakasData.DataSource = asiakas.haeAsiakkaat();
         }
 
+        // Määritetään mitä tapahtuu, kun klikataan Muokkaa- painiketta
         private void AsiakasMuokkaaBTN_Click(object sender, EventArgs e)
         {
             String enimi = AsiakasEtunimiTB.Text;
@@ -108,11 +108,8 @@ namespace HotelliProjekti
 
    
 
-        private void AsiakasKayttajaTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+    
+        // Asiakkaan poistaminen
         private void AsiakasPoistaBTN_Click(object sender, EventArgs e)
         {
             try

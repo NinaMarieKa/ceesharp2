@@ -10,7 +10,7 @@ namespace HotelliProjekti
 {
     class VARAUKSET
     {
-
+        // Yhdistellään luokkaan Yhdistä
         YHDISTA yht = new YHDISTA();
 
         // Hakee kaikki varaukset
