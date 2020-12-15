@@ -45,6 +45,8 @@
             this.dateTimeUlos = new System.Windows.Forms.DateTimePicker();
             this.VarausHuoneenNumeroCB = new System.Windows.Forms.ComboBox();
             this.HuoneenTyyppiCB = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.VarausNumeroTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVaraukset)).BeginInit();
             this.SuspendLayout();
@@ -78,12 +80,13 @@
             this.dataVaraukset.RowTemplate.Height = 28;
             this.dataVaraukset.Size = new System.Drawing.Size(539, 536);
             this.dataVaraukset.TabIndex = 2;
+            this.dataVaraukset.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataVaraukset_CellClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 146);
+            this.label3.Location = new System.Drawing.Point(12, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(184, 29);
             this.label3.TabIndex = 4;
@@ -93,7 +96,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 201);
+            this.label4.Location = new System.Drawing.Point(12, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 29);
             this.label4.TabIndex = 5;
@@ -103,7 +106,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 255);
+            this.label5.Location = new System.Drawing.Point(12, 287);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(205, 29);
             this.label5.TabIndex = 6;
@@ -113,7 +116,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 320);
+            this.label6.Location = new System.Drawing.Point(12, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(241, 29);
             this.label6.TabIndex = 7;
@@ -123,7 +126,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 372);
+            this.label7.Location = new System.Drawing.Point(12, 404);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(217, 29);
             this.label7.TabIndex = 8;
@@ -166,6 +169,7 @@
             this.VarausPoistaBTN.TabIndex = 19;
             this.VarausPoistaBTN.Text = "Poista";
             this.VarausPoistaBTN.UseVisualStyleBackColor = false;
+            this.VarausPoistaBTN.Click += new System.EventHandler(this.VarausPoistaBTN_Click);
             // 
             // VarausTyhjennaBTN
             // 
@@ -183,7 +187,7 @@
             // VarausAsNumeroTB
             // 
             this.VarausAsNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VarausAsNumeroTB.Location = new System.Drawing.Point(260, 143);
+            this.VarausAsNumeroTB.Location = new System.Drawing.Point(258, 173);
             this.VarausAsNumeroTB.Name = "VarausAsNumeroTB";
             this.VarausAsNumeroTB.Size = new System.Drawing.Size(327, 35);
             this.VarausAsNumeroTB.TabIndex = 21;
@@ -193,7 +197,7 @@
             this.dateTimeSisaan.CustomFormat = "dd/MM/yyyy";
             this.dateTimeSisaan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeSisaan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeSisaan.Location = new System.Drawing.Point(259, 315);
+            this.dateTimeSisaan.Location = new System.Drawing.Point(259, 336);
             this.dateTimeSisaan.Name = "dateTimeSisaan";
             this.dateTimeSisaan.Size = new System.Drawing.Size(328, 35);
             this.dateTimeSisaan.TabIndex = 25;
@@ -203,7 +207,7 @@
             this.dateTimeUlos.CustomFormat = "dd/MM/yyyy";
             this.dateTimeUlos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeUlos.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeUlos.Location = new System.Drawing.Point(259, 367);
+            this.dateTimeUlos.Location = new System.Drawing.Point(259, 399);
             this.dateTimeUlos.Name = "dateTimeUlos";
             this.dateTimeUlos.Size = new System.Drawing.Size(328, 35);
             this.dateTimeUlos.TabIndex = 26;
@@ -213,7 +217,7 @@
             this.VarausHuoneenNumeroCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.VarausHuoneenNumeroCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VarausHuoneenNumeroCB.FormattingEnabled = true;
-            this.VarausHuoneenNumeroCB.Location = new System.Drawing.Point(260, 252);
+            this.VarausHuoneenNumeroCB.Location = new System.Drawing.Point(259, 284);
             this.VarausHuoneenNumeroCB.Name = "VarausHuoneenNumeroCB";
             this.VarausHuoneenNumeroCB.Size = new System.Drawing.Size(327, 37);
             this.VarausHuoneenNumeroCB.TabIndex = 34;
@@ -223,11 +227,29 @@
             this.HuoneenTyyppiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HuoneenTyyppiCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneenTyyppiCB.FormattingEnabled = true;
-            this.HuoneenTyyppiCB.Location = new System.Drawing.Point(259, 198);
+            this.HuoneenTyyppiCB.Location = new System.Drawing.Point(258, 228);
             this.HuoneenTyyppiCB.Name = "HuoneenTyyppiCB";
             this.HuoneenTyyppiCB.Size = new System.Drawing.Size(328, 37);
             this.HuoneenTyyppiCB.TabIndex = 35;
             this.HuoneenTyyppiCB.SelectedIndexChanged += new System.EventHandler(this.HuoneenTyyppiCB_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 29);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Varausnumero:";
+            // 
+            // VarausNumeroTB
+            // 
+            this.VarausNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VarausNumeroTB.Location = new System.Drawing.Point(258, 128);
+            this.VarausNumeroTB.Name = "VarausNumeroTB";
+            this.VarausNumeroTB.Size = new System.Drawing.Size(327, 35);
+            this.VarausNumeroTB.TabIndex = 37;
             // 
             // HallitseVarauksia
             // 
@@ -235,6 +257,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1147, 660);
+            this.Controls.Add(this.VarausNumeroTB);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.HuoneenTyyppiCB);
             this.Controls.Add(this.VarausHuoneenNumeroCB);
             this.Controls.Add(this.dateTimeUlos);
@@ -282,5 +306,7 @@
         private System.Windows.Forms.DateTimePicker dateTimeUlos;
         private System.Windows.Forms.ComboBox VarausHuoneenNumeroCB;
         private System.Windows.Forms.ComboBox HuoneenTyyppiCB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox VarausNumeroTB;
     }
 }

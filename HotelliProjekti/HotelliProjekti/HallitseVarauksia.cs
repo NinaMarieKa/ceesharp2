@@ -34,11 +34,15 @@ namespace HotelliProjekti
             VarausHuoneenNumeroCB.DisplayMember = "numero";
             VarausHuoneenNumeroCB.ValueMember = "numero";
 
+            //Näyttää kaikki varaukset
+            dataVaraukset.DataSource = varaukset.haeVaraukset();
+
 
         }
         // Tyhjennetään kentät
         private void VarausTyhjennaBTN_Click(object sender, EventArgs e)
         {
+            VarausNumeroTB.Text = "";
             VarausAsNumeroTB.Text = "";
             VarausHuoneenNumeroCB.SelectedIndex = 0;
             dateTimeSisaan.Value = DateTime.Now;
@@ -108,6 +112,7 @@ namespace HotelliProjekti
         {
             try
             {
+                int vnumero = Convert.ToInt32(VarausNumeroTB.Text);
                 int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
                 int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
                 DateTime sisaanKirj = dateTimeSisaan.Value;
@@ -125,18 +130,54 @@ namespace HotelliProjekti
                 {
                     // Määritetään huoneen vapaus = EI
                     huoneet.huoneEiVapaa(hnumero);
-                    if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
+                    if (varaukset.muokkaaVarausta(vnumero,hnumero, anumero, sisaanKirj, ulosKirj))
                     {
 
-                        MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Varausta muokattu onnistuneesti", "Varausta muokattu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Varauksen tekeminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Varauksen muokkaaminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataVaraukset_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            VarausNumeroTB.Text = dataVaraukset.CurrentRow.Cells[0].Value.ToString();
+
+            //Hae huoneen numero
+            int hnumero = Convert.ToInt32(dataVaraukset.CurrentRow.Cells[1].Value.ToString());
+
+            // Valitse huoneen tyyppi
+            HuoneenTyyppiCB.SelectedValue = huoneet.haeHuoneTyyppi(hnumero);
+
+            // Valitse huoneen numero
+            VarausHuoneenNumeroCB.SelectedValue = hnumero;
+
+            VarausAsNumeroTB.Text = dataVaraukset.CurrentRow.Cells[2].Value.ToString();
+            
+            
+        }
+
+        private void VarausPoistaBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int vnumero = Convert.ToInt32(VarausNumeroTB.Text);
+                if(varaukset.poistaVaraus(vnumero))
+                {
+                    dataVaraukset.DataSource = varaukset.haeVaraukset();
+                    // Varauksen poiston jälkeen täytyy muuttaa vapaa -> Kyllä
+                    MessageBox.Show("Varaus poistettu onnistuneesti", "Varaus poistettu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
