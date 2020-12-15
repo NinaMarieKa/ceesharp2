@@ -72,8 +72,9 @@ namespace HotelliProjekti
         {
             try
             {
+ 
                 int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
-                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                int numero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
                 DateTime sisaanKirj = dateTimeSisaan.Value;
                 DateTime ulosKirj = dateTimeUlos.Value;
 
@@ -87,11 +88,11 @@ namespace HotelliProjekti
                 }
                 else
                 {
-                    // Määritetään huoneen vapaus = EI
-                    huoneet.huoneEiVapaa(hnumero);
-                    if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
+                
+                    if (varaukset.lisaaVaraus(numero, anumero, sisaanKirj, ulosKirj))
                     {
-
+                        // Määritetään huoneen vapaus = EI
+                        // huoneet.huoneEiVapaa(numero, KyllaEi);
                         MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -114,7 +115,7 @@ namespace HotelliProjekti
             {
                 int vnumero = Convert.ToInt32(VarausNumeroTB.Text);
                 int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
-                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                int numero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
                 DateTime sisaanKirj = dateTimeSisaan.Value;
                 DateTime ulosKirj = dateTimeUlos.Value;
 
@@ -126,20 +127,21 @@ namespace HotelliProjekti
                 {
                     MessageBox.Show("Ulos kirjautumisajankohta ei voi olla ennen sisäänkirjautumista", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+                 else
                 {
-                    // Määritetään huoneen vapaus = EI
-                    huoneet.huoneEiVapaa(hnumero);
-                    if (varaukset.muokkaaVarausta(vnumero,hnumero, anumero, sisaanKirj, ulosKirj))
+               
+                    if (varaukset.muokkaaVarausta(vnumero,numero, anumero, sisaanKirj, ulosKirj))
                     {
-
+                        // Määritetään huoneen vapaus = EI
+                       // huoneet.huoneEiVapaa(numero, KyllaEi);
                         MessageBox.Show("Varausta muokattu onnistuneesti", "Varausta muokattu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         MessageBox.Show("Varauksen muokkaaminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
+                } 
+
             }
 
             catch (Exception ex)
@@ -196,7 +198,6 @@ namespace HotelliProjekti
 //
 // Ongelmia myös huoneiden kanssa, varauksissa oli myös ongelmia..
 // Salasanojen suolaus ohjelma ladattu, ei vielä käytetty
-// Kuinka tehtiin se, että ohjelma luo käyttäjätunnukset ja salasanat automaattisesti?
 
 //ALTER TABLE huoneet add CONSTRAINT fk_tyyppi_id FOREIGN KEY (tyyppi) REFERENCES huone_tyypit (idHuonetyyppi) on UPDATE CASCADE on DELETE CASCADE;
 //ALTER TABLE varaukset add CONSTRAINT fk_huoneen_numero FOREIGN KEY (huoneenNumero) REFERENCES huoneet (numero) on UPDATE CASCADE on DELETE CASCADE;

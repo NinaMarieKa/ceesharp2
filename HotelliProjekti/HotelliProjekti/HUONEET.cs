@@ -44,6 +44,7 @@ namespace HotelliProjekti
             adapteri.Fill(taulu);
 
             return taulu;
+            // Jokin virhe "unknown column where clause is "Kyllä"", ei avaa sivua.
 
         }
         // Funktio, joka palauttaa huonetyypit
@@ -63,7 +64,7 @@ namespace HotelliProjekti
         }
 
         // Funktio, joka muuttaa vapaa = EI
-        public bool huoneEiVapaa(int numero, String KYLLA_vai_EI)
+       /* public bool huoneEiVapaa(int numero, String KyllaEi)
         {
             MySqlCommand komento = new MySqlCommand("UPDATE `huoneet` SET `vapaa`=`Ei` WHERE `numero`=@num", yht.OtaYhteytta());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
@@ -86,7 +87,7 @@ namespace HotelliProjekti
 
 
         }
-
+        */
 
         // Funktio uuden huoneen lisäämiseksi
         public bool lisaaHuone(int numero, int tyyppi, String puhelin, String vapaa)

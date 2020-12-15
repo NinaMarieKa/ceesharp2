@@ -73,6 +73,8 @@ namespace HotelliProjekti
         }
 
         // Huoneen muokkaus
+
+        // Täällä tulee virhe , " Unknown column "number" in "where clause""
         private void HuoneMuokkaaBTN_Click(object sender, EventArgs e)
         {
             int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
