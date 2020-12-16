@@ -43,8 +43,8 @@
             this.HuonePuhelinTB = new System.Windows.Forms.TextBox();
             this.HuoneenTyyppiCB = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButtonKylla = new System.Windows.Forms.RadioButton();
             this.radioButtonEi = new System.Windows.Forms.RadioButton();
+            this.radioButtonKylla = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVHuoneet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -124,7 +124,7 @@
             // 
             // dGVHuoneet
             // 
-            this.dGVHuoneet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVHuoneet.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dGVHuoneet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVHuoneet.Location = new System.Drawing.Point(545, 89);
             this.dGVHuoneet.Name = "dGVHuoneet";
@@ -210,6 +210,19 @@
             this.panel2.Size = new System.Drawing.Size(298, 60);
             this.panel2.TabIndex = 34;
             // 
+            // radioButtonEi
+            // 
+            this.radioButtonEi.AutoSize = true;
+            this.radioButtonEi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonEi.ForeColor = System.Drawing.Color.Red;
+            this.radioButtonEi.Location = new System.Drawing.Point(149, 14);
+            this.radioButtonEi.Name = "radioButtonEi";
+            this.radioButtonEi.Size = new System.Drawing.Size(62, 33);
+            this.radioButtonEi.TabIndex = 1;
+            this.radioButtonEi.TabStop = true;
+            this.radioButtonEi.Text = "EI";
+            this.radioButtonEi.UseVisualStyleBackColor = true;
+            // 
             // radioButtonKylla
             // 
             this.radioButtonKylla.AutoSize = true;
@@ -223,19 +236,6 @@
             this.radioButtonKylla.TabStop = true;
             this.radioButtonKylla.Text = "KYLLÄ";
             this.radioButtonKylla.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonEi
-            // 
-            this.radioButtonEi.AutoSize = true;
-            this.radioButtonEi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonEi.ForeColor = System.Drawing.Color.Red;
-            this.radioButtonEi.Location = new System.Drawing.Point(149, 14);
-            this.radioButtonEi.Name = "radioButtonEi";
-            this.radioButtonEi.Size = new System.Drawing.Size(62, 33);
-            this.radioButtonEi.TabIndex = 1;
-            this.radioButtonEi.TabStop = true;
-            this.radioButtonEi.Text = "EI";
-            this.radioButtonEi.UseVisualStyleBackColor = true;
             // 
             // HallitseHuoneita
             // 
@@ -258,6 +258,8 @@
             this.Controls.Add(this.HuoneMuokkaaBTN);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "HallitseHuoneita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hallitse huoneita";

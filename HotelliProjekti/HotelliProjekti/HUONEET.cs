@@ -34,7 +34,7 @@ namespace HotelliProjekti
         // Näyttää huoneen numeron valitun huonetyypin mukaan
         public DataTable huoneTyypinMukaan(int tyyppi)
         {
-            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huoneet` WHERE `tyyppi`=@tpi and vapaa=Kyllä", yht.OtaYhteytta());
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huoneet` WHERE `tyyppi`=@tpi and vapaa='Kyllä'", yht.OtaYhteytta());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
@@ -135,7 +135,7 @@ namespace HotelliProjekti
         public bool muokkaaHuonetta(int numero, int tyyppi, String puhelin, String vapaa)
             {
                 MySqlCommand komento = new MySqlCommand();
-                String muokattuKysely = "UPDATE `huoneet`SET `tyyppi`= @tpi,`puhelin`= @phn,`vapaa`= @vpa WHERE `number` = @num";
+                String muokattuKysely = "UPDATE `huoneet`SET `tyyppi`= @tpi,`puhelin`= @phn,`vapaa`= @vpa WHERE `numero` = @num";
                 komento.CommandText = muokattuKysely;
                 komento.Connection = yht.OtaYhteytta();
                 //komento.Parameters.Add("");

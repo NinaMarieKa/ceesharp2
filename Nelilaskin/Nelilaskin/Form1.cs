@@ -21,21 +21,6 @@ namespace Nelilaskin
             InitializeComponent();
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         // Toiminto näppäimelle 1
         private void numYksi_Click(object sender, EventArgs e)
         {
@@ -181,9 +166,6 @@ namespace Nelilaskin
             arvo = 0;
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

@@ -22,21 +22,8 @@ namespace HotelliProjekti
             this.Close();
             Application.Exit();
         }
-        // Ulkoasua, samaa kuin kirjautumissivulla..
-        private void SuljePaasivuLB_MouseEnter(object sender, EventArgs e)
-        {
-            SuljePaasivuLB.ForeColor = Color.Black;
-        }
 
-        private void SuljePaasivuLB_MouseLeave(object sender, EventArgs e)
-        {
-            SuljePaasivuLB.ForeColor = Color.White;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         // Määritetään, se että mitä tapahtuu kun klikataan kohdasta Hallitse asiakkaita
         private void asiakkaidenHallintaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,6 +41,12 @@ namespace HotelliProjekti
         {
             HallitseHuoneita hallitseH = new HallitseHuoneita();
             hallitseH.Show();
+        }
+
+        private void Paasivu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }

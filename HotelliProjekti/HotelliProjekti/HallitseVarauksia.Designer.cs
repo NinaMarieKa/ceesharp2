@@ -275,6 +275,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataVaraukset);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "HallitseVarauksia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HallitseVarauksia";

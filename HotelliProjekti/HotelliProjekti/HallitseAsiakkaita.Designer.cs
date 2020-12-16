@@ -49,6 +49,8 @@
             this.UusiAsiakasBTN = new System.Windows.Forms.Button();
             this.AsiakasPoistaBTN = new System.Windows.Forms.Button();
             this.AsiakasTyhjennaBTN = new System.Windows.Forms.Button();
+            this.AsiakasIdLB = new System.Windows.Forms.Label();
+            this.AsiakasIdTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AsiakasData)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +79,7 @@
             // 
             this.AsiakasData.AllowUserToAddRows = false;
             this.AsiakasData.AllowUserToDeleteRows = false;
+            this.AsiakasData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.AsiakasData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AsiakasData.Location = new System.Drawing.Point(599, 155);
             this.AsiakasData.Name = "AsiakasData";
@@ -188,7 +191,6 @@
             this.AsiakasPostinumeroTB.Name = "AsiakasPostinumeroTB";
             this.AsiakasPostinumeroTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasPostinumeroTB.TabIndex = 12;
-            
             // 
             // AsiakasToimipaikkaTB
             // 
@@ -205,7 +207,6 @@
             this.AsiakasKayttajaTB.Name = "AsiakasKayttajaTB";
             this.AsiakasKayttajaTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasKayttajaTB.TabIndex = 14;
-           
             // 
             // AsiakasSalasanaTB
             // 
@@ -214,6 +215,7 @@
             this.AsiakasSalasanaTB.Name = "AsiakasSalasanaTB";
             this.AsiakasSalasanaTB.Size = new System.Drawing.Size(331, 35);
             this.AsiakasSalasanaTB.TabIndex = 15;
+            this.AsiakasSalasanaTB.UseSystemPasswordChar = true;
             // 
             // AsiakasMuokkaaBTN
             // 
@@ -267,12 +269,33 @@
             this.AsiakasTyhjennaBTN.UseVisualStyleBackColor = false;
             this.AsiakasTyhjennaBTN.Click += new System.EventHandler(this.AsiakasTyhjennaBTN_Click);
             // 
+            // AsiakasIdLB
+            // 
+            this.AsiakasIdLB.AutoSize = true;
+            this.AsiakasIdLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasIdLB.Location = new System.Drawing.Point(28, 155);
+            this.AsiakasIdLB.Name = "AsiakasIdLB";
+            this.AsiakasIdLB.Size = new System.Drawing.Size(131, 29);
+            this.AsiakasIdLB.TabIndex = 20;
+            this.AsiakasIdLB.Text = "Asiakas ID:";
+            // 
+            // AsiakasIdTB
+            // 
+            this.AsiakasIdTB.Enabled = false;
+            this.AsiakasIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasIdTB.Location = new System.Drawing.Point(248, 152);
+            this.AsiakasIdTB.Name = "AsiakasIdTB";
+            this.AsiakasIdTB.Size = new System.Drawing.Size(331, 35);
+            this.AsiakasIdTB.TabIndex = 21;
+            // 
             // HallitseAsiakkaita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1179, 688);
+            this.Controls.Add(this.AsiakasIdTB);
+            this.Controls.Add(this.AsiakasIdLB);
             this.Controls.Add(this.AsiakasTyhjennaBTN);
             this.Controls.Add(this.AsiakasPoistaBTN);
             this.Controls.Add(this.UusiAsiakasBTN);
@@ -293,7 +316,10 @@
             this.Controls.Add(this.AsiakasEtunimiLB);
             this.Controls.Add(this.AsiakasData);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "HallitseAsiakkaita";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HallitseAsiakkaita";
             this.Load += new System.EventHandler(this.HallitseAsiakkaita_Load);
             this.panel1.ResumeLayout(false);
@@ -327,5 +353,7 @@
         private System.Windows.Forms.Button UusiAsiakasBTN;
         private System.Windows.Forms.Button AsiakasPoistaBTN;
         private System.Windows.Forms.Button AsiakasTyhjennaBTN;
+        private System.Windows.Forms.Label AsiakasIdLB;
+        private System.Windows.Forms.TextBox AsiakasIdTB;
     }
 }

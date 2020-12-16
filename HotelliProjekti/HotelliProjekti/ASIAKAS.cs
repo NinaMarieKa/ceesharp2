@@ -60,7 +60,7 @@ namespace HotelliProjekti
         // Tässä luodaan funktio, joka hakee asiakaslistan
         public DataTable haeAsiakkaat()
         {
-         MySqlCommand komento = new MySqlCommand("SELECT * FROM `asiakkaat`", yht.OtaYhteytta());
+         MySqlCommand komento = new MySqlCommand("SELECT * FROM asiakkaat", yht.OtaYhteytta());
          MySqlDataAdapter adapteri = new MySqlDataAdapter();
          DataTable taulu = new DataTable();
 
@@ -70,18 +70,18 @@ namespace HotelliProjekti
         }
 
     // Tässä luodaan funktio asiakkaan muokkaamiseksi
-        public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String ktunnus, String ssana)
+        public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String asiID, String ssana)
        {
         MySqlCommand komento = new MySqlCommand();
-        String muokattuKysely = "INSERT INTO `asiakkaat`" + 
-            "(Ktunnus, Etunimi, Sukunimi, Lahiosoite, Postinumero, Postitoimipaikka, Salasana)" +
-            "VALUES(@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa); " + "WHERE Ktunnus =@ktu";
+        String muokattuKysely = "UPDATE asiakkaat SET Etunimi= @enm, " +
+                "Sukunimi= @snm, Lahiosoite= @oso,Postinumero= @pno, " +
+                "Postitoimipaikka = @ptp,Salasana= @ssa WHERE asiakasID = @asi";
         komento.CommandText = muokattuKysely;
         komento.Connection = yht.OtaYhteytta();
         
 
             //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
-        komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
+        komento.Parameters.Add("@asi", MySqlDbType.VarChar).Value = asiID;
         komento.Parameters.Add("@enm", MySqlDbType.VarChar).Value = enimi;
         komento.Parameters.Add("@snm", MySqlDbType.VarChar).Value = snimi;
         komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = osoite;

@@ -19,36 +19,6 @@ namespace HotelliProjekti
             InitializeComponent();
         }
 
-        // Kirjautumisikkunan sulkeminen
-        // Poistin borderin kirjautumisikkunasta, koska omaa silmääni miellyttää
-        // enemmän ilman. Loin SuljeTastaLB:n ikkunan sulkemiseksi.
-        private void SuljeTastaLB_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        // Seuraavissa määritellään vain ulkoasun asioita
-        private void SuljeTastaLB_MouseEnter(object sender, EventArgs e)
-        {
-            SuljeTastaLB.ForeColor = Color.Black;
-        }
-
-        private void SuljeTastaLB_MouseLeave(object sender, EventArgs e)
-        {
-            SuljeTastaLB.ForeColor = Color.White;
-        }
-
-        private void KirjauduTastaBTN_MouseEnter(object sender, EventArgs e)
-        {
-            KirjauduTastaBTN.BackColor = Color.White;
-            KirjauduTastaBTN.ForeColor = Color.RosyBrown;
-        }
-
-        private void KirjauduTastaBTN_MouseLeave(object sender, EventArgs e)
-        {
-            KirjauduTastaBTN.BackColor = Color.RosyBrown;
-            KirjauduTastaBTN.ForeColor = Color.White;
-            
-        }
 
         // Määritetään toiminnot Kirjaudu- painikkeelle
         private void KirjauduTastaBTN_Click(object sender, EventArgs e)
