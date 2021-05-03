@@ -28,7 +28,7 @@ namespace HotelliProjekti
             HuoneenTyyppiCB.DisplayMember = "tyyppi";
             HuoneenTyyppiCB.ValueMember = "idHuonetyyppi";
 
-            // Näyttää huoneen numeron valitun huonetyypin mukaan
+            // Näyttää vapaan huoneen numeron valitun huonetyypin mukaan
             int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
             VarausHuoneenNumeroCB.DataSource = huoneet.huoneTyypinMukaan(tyyppi);
             VarausHuoneenNumeroCB.DisplayMember = "numero";
@@ -42,7 +42,7 @@ namespace HotelliProjekti
         // Tyhjennetään kentät
         private void VarausTyhjennaBTN_Click(object sender, EventArgs e)
         {
-            VarausNumeroTB.Text = "";
+            varausNumeroTB.Text = "";
             VarausAsNumeroTB.Text = "";
             VarausHuoneenNumeroCB.SelectedIndex = 0;
             dateTimeSisaan.Value = DateTime.Now;
@@ -72,27 +72,28 @@ namespace HotelliProjekti
         {
             try
             {
- 
+            
                 int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
-                int numero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
                 DateTime sisaanKirj = dateTimeSisaan.Value;
                 DateTime ulosKirj = dateTimeUlos.Value;
 
-                if (sisaanKirj < DateTime.Now)
+                if (DateTime.Compare(sisaanKirj.Date,DateTime.Now.Date)<0)
                 {
                     MessageBox.Show("Sisään kirjautumisajankohta voi olla aikaisintaan tänään", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (ulosKirj < sisaanKirj)
+                else if (DateTime.Compare(ulosKirj.Date,sisaanKirj.Date)<0)
                 {
                     MessageBox.Show("Ulos kirjautumisajankohta ei voi olla ennen sisäänkirjautumista", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                 
-                    if (varaukset.lisaaVaraus(numero, anumero, sisaanKirj, ulosKirj))
+                    if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
                     {
                         // Määritetään huoneen vapaus = EI
-                        // huoneet.huoneEiVapaa(numero, KyllaEi);
+                        huoneet.huoneVapaa(hnumero, "Ei");
+                        dataVaraukset.DataSource = varaukset.haeVaraukset();
                         MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -113,9 +114,9 @@ namespace HotelliProjekti
         {
             try
             {
-                int vnumero = Convert.ToInt32(VarausNumeroTB.Text);
+                int vnumero = Convert.ToInt32(varausNumeroTB.Text);
                 int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
-                int numero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                int hnumero = Convert.ToInt32(dataVaraukset.CurrentRow.Cells[1].Value.ToString());
                 DateTime sisaanKirj = dateTimeSisaan.Value;
                 DateTime ulosKirj = dateTimeUlos.Value;
 
@@ -130,10 +131,11 @@ namespace HotelliProjekti
                  else
                 {
                
-                    if (varaukset.muokkaaVarausta(vnumero,numero, anumero, sisaanKirj, ulosKirj))
+                    if (varaukset.muokkaaVarausta(vnumero, anumero, hnumero, sisaanKirj, ulosKirj))
                     {
                         // Määritetään huoneen vapaus = EI
-                       // huoneet.huoneEiVapaa(numero, KyllaEi);
+                        huoneet.huoneVapaa(hnumero, "Ei");
+                        dataVaraukset.DataSource = varaukset.haeVaraukset();
                         MessageBox.Show("Varausta muokattu onnistuneesti", "Varausta muokattu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -152,31 +154,35 @@ namespace HotelliProjekti
 
         private void dataVaraukset_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            VarausNumeroTB.Text = dataVaraukset.CurrentRow.Cells[0].Value.ToString();
+           varausNumeroTB.Text = dataVaraukset.CurrentRow.Cells[0].Value.ToString();
 
             //Hae huoneen numero
-            int hnumero = Convert.ToInt32(dataVaraukset.CurrentRow.Cells[1].Value.ToString());
+            int numero = Convert.ToInt32(dataVaraukset.CurrentRow.Cells[1].Value.ToString());
 
             // Valitse huoneen tyyppi
-            HuoneenTyyppiCB.SelectedValue = huoneet.haeHuoneTyyppi(hnumero);
+            HuoneenTyyppiCB.SelectedValue = huoneet.haeHuoneTyyppi(numero);
 
             // Valitse huoneen numero
-            VarausHuoneenNumeroCB.SelectedValue = hnumero;
+            VarausHuoneenNumeroCB.SelectedValue = numero;
 
             VarausAsNumeroTB.Text = dataVaraukset.CurrentRow.Cells[2].Value.ToString();
             
-            
+            dateTimeSisaan.Value = Convert.ToDateTime(dataVaraukset.CurrentRow.Cells[3].Value);
+            dateTimeUlos.Value = Convert.ToDateTime(dataVaraukset.CurrentRow.Cells[4].Value);
         }
 
         private void VarausPoistaBTN_Click(object sender, EventArgs e)
         {
             try
             {
-                int vnumero = Convert.ToInt32(VarausNumeroTB.Text);
+
+                int vnumero = Convert.ToInt32(varausNumeroTB.Text);
+                int hnumero = Convert.ToInt32(dataVaraukset.CurrentRow.Cells[1].Value.ToString());
                 if(varaukset.poistaVaraus(vnumero))
                 {
                     dataVaraukset.DataSource = varaukset.haeVaraukset();
                     // Varauksen poiston jälkeen täytyy muuttaa vapaa -> Kyllä
+                    huoneet.huoneVapaa(hnumero, "Kyllä");
                     MessageBox.Show("Varaus poistettu onnistuneesti", "Varaus poistettu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -190,15 +196,3 @@ namespace HotelliProjekti
 
 
         
-
-// Ongelmia asiakasta lisättäessä, muokattaessa ja poistaessa,
-//
-// "You have an error in your SQL syntax; check the manual that corresponds to
-// your MariaDB server version for the righ syntax to use near "WHERE Ktunnus= " at line 1"
-//
-// Ongelmia myös huoneiden kanssa, varauksissa oli myös ongelmia..
-// Salasanojen suolaus ohjelma ladattu, ei vielä käytetty
-
-//ALTER TABLE huoneet add CONSTRAINT fk_tyyppi_id FOREIGN KEY (tyyppi) REFERENCES huone_tyypit (idHuonetyyppi) on UPDATE CASCADE on DELETE CASCADE;
-//ALTER TABLE varaukset add CONSTRAINT fk_huoneen_numero FOREIGN KEY (huoneenNumero) REFERENCES huoneet (numero) on UPDATE CASCADE on DELETE CASCADE;
-// En onnistunut kolmannessa linkityksessä, tein täysin videon ohjeen mukaan, mutta siltikin jokin virhe

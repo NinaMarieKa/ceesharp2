@@ -43,6 +43,7 @@ namespace HotelliProjekti
             string puhelin = HuonePuhelinTB.Text;
             string vapaa = "";
 
+
             try
             {
                 int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
@@ -54,16 +55,16 @@ namespace HotelliProjekti
                 {
                     vapaa = "Ei";
                 }
-
-                if (huoneet.lisaaHuone(numero, tyyppi, puhelin, vapaa))
+                if (puhelin.Trim().Equals("") || vapaa.Trim().Equals(""))
+                {
+                    MessageBox.Show("Pakollisia kenttiä täyttämättä", "TYHJIÄ KENTTIÄ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (huoneet.lisaaHuone(numero, tyyppi, puhelin, vapaa))
                 {
                     dGVHuoneet.DataSource = huoneet.haeHuoneet();
                     MessageBox.Show("Huone lisätty onnistuneesti", "Huone lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-                    MessageBox.Show("Huoneen lisäys epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -74,7 +75,7 @@ namespace HotelliProjekti
 
         // Huoneen muokkaus
 
-        // Täällä tulee virhe , " Unknown column "number" in "where clause""
+       
         private void HuoneMuokkaaBTN_Click(object sender, EventArgs e)
         {
             int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
@@ -86,11 +87,11 @@ namespace HotelliProjekti
                 int numero = Convert.ToInt32(HuoneenNumeroTB.Text);
                 if (radioButtonKylla.Checked)
                 {
-                    vapaa = "KYLLÄ";
+                    vapaa = "Kyllä";
                 }
                 else if (radioButtonEi.Checked)
                 {
-                    vapaa = "EI";
+                    vapaa = "Ei";
                 }
                 if (huoneet.muokkaaHuonetta(numero, tyyppi, puhelin, vapaa))
                 {

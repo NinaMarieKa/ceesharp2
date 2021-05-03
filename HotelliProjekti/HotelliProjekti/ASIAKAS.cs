@@ -22,14 +22,13 @@ namespace HotelliProjekti
         public bool lisaaAsiakas(String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String ktunnus, String ssana)
         {
             MySqlCommand komento = new MySqlCommand();
-            String lisaaKysely = "INSERT INTO `asiakkaat`" +
-            "(Ktunnus, Etunimi, Sukunimi, Lahiosoite, Postinumero, Postitoimipaikka, Salasana)" +
-            "VALUES(@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa); ";
+            String lisaaKysely = "INSERT INTO `asiakkaat`( `Ktunnus`, `Etunimi`, `Sukunimi`, `Lahiosoite`, `Postinumero`, `Postitoimipaikka`, `Salasana`) VALUES(@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)";
             komento.CommandText = lisaaKysely;
             komento.Connection = yht.OtaYhteytta();
-          
+
 
             //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
+            
             komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
             komento.Parameters.Add("@enm", MySqlDbType.VarChar).Value = enimi;
             komento.Parameters.Add("@snm", MySqlDbType.VarChar).Value = snimi;
@@ -70,24 +69,23 @@ namespace HotelliProjekti
         }
 
     // Tässä luodaan funktio asiakkaan muokkaamiseksi
-        public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String asiID, String ssana)
+        public bool muokkaaAsiakasta(int asiId, String enimi, String snimi, String osoite, String pnumero, String ptpaikka, String kayttaja, String salis)
        {
         MySqlCommand komento = new MySqlCommand();
-        String muokattuKysely = "UPDATE asiakkaat SET Etunimi= @enm, " +
-                "Sukunimi= @snm, Lahiosoite= @oso,Postinumero= @pno, " +
-                "Postitoimipaikka = @ptp,Salasana= @ssa WHERE asiakasID = @asi";
+        String muokattuKysely = "UPDATE `asiakkaat` SET `Ktunnus`=@ktu,`Etunimi`=@enm,`Sukunimi`=@snm,`Lahiosoite`=@oso,`Postinumero`=@pno,`Postitoimipaikka`=@ptp,`Salasana`=@ssa WHERE `asiakasID`=@asi";
         komento.CommandText = muokattuKysely;
         komento.Connection = yht.OtaYhteytta();
         
 
-            //@ktu, @enm, @snm, @oso, @pno, @ptp, @ssa)
-        komento.Parameters.Add("@asi", MySqlDbType.VarChar).Value = asiID;
+            //@ktu, @enm, @snm, @oso, @pno, @ptp,@ktu, @ssa)
+        komento.Parameters.Add("@asi", MySqlDbType.Int32).Value = asiId;
         komento.Parameters.Add("@enm", MySqlDbType.VarChar).Value = enimi;
         komento.Parameters.Add("@snm", MySqlDbType.VarChar).Value = snimi;
         komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = osoite;
         komento.Parameters.Add("@pno", MySqlDbType.VarChar).Value = pnumero;
         komento.Parameters.Add("@ptp", MySqlDbType.VarChar).Value = ptpaikka;
-        komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = ssana;
+        komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = kayttaja;
+        komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = salis;
 
         yht.AvaaYhteys();
 
@@ -106,17 +104,15 @@ namespace HotelliProjekti
         
        }
         // Funktio asiakkaan poistamiseksi
-        public bool poistaAsiakas(String ktunnus)
+        public bool poistaAsiakas(int asiId)
         {
             MySqlCommand komento = new MySqlCommand();
-            // Mitä poistetaan ja mistä ..  Pitäisikö tässä olla ktunnus vaihdettu -> asiakasID?
-            String poistaKysely = "DELETE FROM `asiakkaat` WHERE `Ktunnus`=@ktu";
+            String poistaKysely = "DELETE FROM `asiakkaat` WHERE `asiakasID`=@asi";
             komento.CommandText = poistaKysely;
             komento.Connection = yht.OtaYhteytta();
             
-
-            //@ktu
-            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
+            //@asi
+            komento.Parameters.Add("@asi", MySqlDbType.Int32).Value = asiId;
 
             yht.AvaaYhteys();
             // Avataan ja suljetaan yhteys

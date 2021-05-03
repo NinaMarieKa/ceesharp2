@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LBVapaa = new System.Windows.Forms.Label();
             this.HuoneenNumeroTB = new System.Windows.Forms.TextBox();
             this.HuonePuhelinTB = new System.Windows.Forms.TextBox();
             this.HuoneenTyyppiCB = new System.Windows.Forms.ComboBox();
@@ -164,15 +164,15 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Puhelin";
             // 
-            // label5
+            // LBVapaa
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 348);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 29);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Vapaa";
+            this.LBVapaa.AutoSize = true;
+            this.LBVapaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBVapaa.Location = new System.Drawing.Point(12, 348);
+            this.LBVapaa.Name = "LBVapaa";
+            this.LBVapaa.Size = new System.Drawing.Size(81, 29);
+            this.LBVapaa.TabIndex = 26;
+            this.LBVapaa.Text = "Vapaa";
             // 
             // HuoneenNumeroTB
             // 
@@ -247,7 +247,7 @@
             this.Controls.Add(this.HuoneenTyyppiCB);
             this.Controls.Add(this.HuonePuhelinTB);
             this.Controls.Add(this.HuoneenNumeroTB);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.LBVapaa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -286,7 +286,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LBVapaa;
         private System.Windows.Forms.TextBox HuoneenNumeroTB;
         private System.Windows.Forms.TextBox HuonePuhelinTB;
         private System.Windows.Forms.ComboBox HuoneenTyyppiCB;

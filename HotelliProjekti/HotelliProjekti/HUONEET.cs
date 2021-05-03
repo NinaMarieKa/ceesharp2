@@ -44,7 +44,7 @@ namespace HotelliProjekti
             adapteri.Fill(taulu);
 
             return taulu;
-            // Jokin virhe "unknown column where clause is "Kyllä"", ei avaa sivua.
+           
 
         }
         // Funktio, joka palauttaa huonetyypit
@@ -63,14 +63,15 @@ namespace HotelliProjekti
 
         }
 
-        // Funktio, joka muuttaa vapaa = EI
-       /* public bool huoneEiVapaa(int numero, String KyllaEi)
+        // Funktio, joka muuttaa vapaa = Kyllä tai Ei
+         public bool huoneVapaa(int hnumero, String KYLLA_tai_EI)
         {
-            MySqlCommand komento = new MySqlCommand("UPDATE `huoneet` SET `vapaa`=`Ei` WHERE `numero`=@num", yht.OtaYhteytta());
+            MySqlCommand komento = new MySqlCommand("UPDATE `huoneet` SET `vapaa`=@kylla_ei WHERE `numero`=@num", yht.OtaYhteytta());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
-            komento.Parameters.Add("@num", MySqlDbType.Int32).Value = numero;
+            komento.Parameters.Add("@num", MySqlDbType.Int32).Value = hnumero;
+            komento.Parameters.Add("@kylla_ei", MySqlDbType.VarChar).Value = KYLLA_tai_EI;
 
             yht.AvaaYhteys();
 
@@ -87,7 +88,8 @@ namespace HotelliProjekti
 
 
         }
-        */
+
+        
 
         // Funktio uuden huoneen lisäämiseksi
         public bool lisaaHuone(int numero, int tyyppi, String puhelin, String vapaa)
@@ -138,7 +140,7 @@ namespace HotelliProjekti
                 String muokattuKysely = "UPDATE `huoneet`SET `tyyppi`= @tpi,`puhelin`= @phn,`vapaa`= @vpa WHERE `numero` = @num";
                 komento.CommandText = muokattuKysely;
                 komento.Connection = yht.OtaYhteytta();
-                //komento.Parameters.Add("");
+                
 
                 //@num, @tpi, @phn, @vpa)
                 komento.Parameters.Add("@num", MySqlDbType.Int32).Value = numero;
@@ -168,7 +170,7 @@ namespace HotelliProjekti
                 String poistaKysely = "DELETE FROM `huoneet` WHERE `numero`=@num";
                 komento.CommandText = poistaKysely;
                 komento.Connection = yht.OtaYhteytta();
-                //komento.Parameters.Add("");
+                
 
                 //@num
                 komento.Parameters.Add("@num", MySqlDbType.VarChar).Value = numero;

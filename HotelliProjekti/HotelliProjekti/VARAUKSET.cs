@@ -30,7 +30,7 @@ namespace HotelliProjekti
         public bool lisaaVaraus(int hnumero, int anumero, DateTime sisaan, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
-            String lisaaKysely = "INSERT INTO `varaukset`(`huoneenNumero`, `asiakasNumero`, `sisaanKirj`, `ulosKirj`) VALUES (@hno,@ano,@spv,@upv)";
+            String lisaaKysely = "INSERT INTO `varaukset`(`huoneenNumero`,`asiakasNumero`, `sisaanKirj`, `ulosKirj`) VALUES (@hno,@ano,@spv,@upv)";
             komento.CommandText = lisaaKysely;
             komento.Connection = yht.OtaYhteytta();
 
@@ -67,7 +67,6 @@ namespace HotelliProjekti
 
 
             //@vno,@hno,@ano,@spv,@upv
-
             komento.Parameters.Add("@vno", MySqlDbType.Int32).Value = vnumero;
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnumero;
             komento.Parameters.Add("@ano", MySqlDbType.Int32).Value = anumero;
