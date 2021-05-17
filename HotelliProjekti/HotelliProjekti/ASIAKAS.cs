@@ -56,6 +56,8 @@ namespace HotelliProjekti
 
         }
 
+        
+
         // Tässä luodaan funktio, joka hakee asiakaslistan
         public DataTable haeAsiakkaat()
         {

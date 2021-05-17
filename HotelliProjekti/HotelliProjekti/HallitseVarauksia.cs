@@ -18,8 +18,9 @@ namespace HotelliProjekti
         }
         // Yhdistetään luokkiin
         HUONEET huoneet = new HUONEET();
-
         VARAUKSET varaukset = new VARAUKSET();
+        ASIAKAS asiakas = new ASIAKAS();
+
 
         private void HallitseVarauksia_Load(object sender, EventArgs e)
         {
@@ -34,8 +35,9 @@ namespace HotelliProjekti
             VarausHuoneenNumeroCB.DisplayMember = "numero";
             VarausHuoneenNumeroCB.ValueMember = "numero";
 
+
             //Näyttää kaikki varaukset
-            dataVaraukset.DataSource = varaukset.haeVaraukset();
+            dataVaraukset.DataSource = varaukset.haeVaraukset(); 
 
 
         }
@@ -43,7 +45,7 @@ namespace HotelliProjekti
         private void VarausTyhjennaBTN_Click(object sender, EventArgs e)
         {
             varausNumeroTB.Text = "";
-            VarausAsNumeroTB.Text = "";
+            AsiakasNumeroTB.Text = "";
             VarausHuoneenNumeroCB.SelectedIndex = 0;
             dateTimeSisaan.Value = DateTime.Now;
             dateTimeUlos.Value = DateTime.Now;
@@ -55,7 +57,7 @@ namespace HotelliProjekti
             try
             {
                 // Näyttää huoneen numeron valitun huonetyypin mukaan
-                int tyyppi = Convert.ToInt32(HuoneenTyyppiCB.SelectedValue.ToString());
+                int tyyppi = HuoneenTyyppiCB.SelectedIndex + 1;
                 VarausHuoneenNumeroCB.DataSource = huoneet.huoneTyypinMukaan(tyyppi);
                 VarausHuoneenNumeroCB.DisplayMember = "numero";
                 VarausHuoneenNumeroCB.ValueMember = "numero";
@@ -73,8 +75,8 @@ namespace HotelliProjekti
             try
             {
             
-                int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
-                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue);
+                int anumero = Convert.ToInt32(AsiakasNumeroTB.Text);
+                int hnumero = Convert.ToInt32(VarausHuoneenNumeroCB.SelectedValue.ToString());
                 DateTime sisaanKirj = dateTimeSisaan.Value;
                 DateTime ulosKirj = dateTimeUlos.Value;
 
@@ -115,23 +117,23 @@ namespace HotelliProjekti
             try
             {
                 int vnumero = Convert.ToInt32(varausNumeroTB.Text);
-                int anumero = Convert.ToInt32(VarausAsNumeroTB.Text);
+                int anumero = Convert.ToInt32(AsiakasNumeroTB.Text);
                 int hnumero = Convert.ToInt32(dataVaraukset.CurrentRow.Cells[1].Value.ToString());
                 DateTime sisaanKirj = dateTimeSisaan.Value;
                 DateTime ulosKirj = dateTimeUlos.Value;
 
-                if (sisaanKirj < DateTime.Now)
+                if (DateTime.Compare(sisaanKirj.Date, DateTime.Now.Date) < 0)
                 {
                     MessageBox.Show("Sisään kirjautumisajankohta voi olla aikaisintaan tänään", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (ulosKirj < sisaanKirj)
+                else if (DateTime.Compare(ulosKirj.Date, sisaanKirj.Date) < 0)
                 {
                     MessageBox.Show("Ulos kirjautumisajankohta ei voi olla ennen sisäänkirjautumista", "Tarkista päivämäärä", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                  else
                 {
                
-                    if (varaukset.muokkaaVarausta(vnumero, anumero, hnumero, sisaanKirj, ulosKirj))
+                    if (varaukset.muokkaaVarausta(vnumero, hnumero, anumero, sisaanKirj, ulosKirj))
                     {
                         // Määritetään huoneen vapaus = EI
                         huoneet.huoneVapaa(hnumero, "Ei");
@@ -165,7 +167,7 @@ namespace HotelliProjekti
             // Valitse huoneen numero
             VarausHuoneenNumeroCB.SelectedValue = numero;
 
-            VarausAsNumeroTB.Text = dataVaraukset.CurrentRow.Cells[2].Value.ToString();
+          AsiakasNumeroTB.Text = dataVaraukset.CurrentRow.Cells[2].Value.ToString();
             
             dateTimeSisaan.Value = Convert.ToDateTime(dataVaraukset.CurrentRow.Cells[3].Value);
             dateTimeUlos.Value = Convert.ToDateTime(dataVaraukset.CurrentRow.Cells[4].Value);
@@ -191,6 +193,9 @@ namespace HotelliProjekti
                 MessageBox.Show(ex.Message, "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
+        
     }
 }
 

@@ -13,6 +13,20 @@ namespace HotelliProjekti
         // Yhdistellään luokkaan Yhdistä
         YHDISTA yht = new YHDISTA();
 
+        public DataTable huoneTyyppiLista()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM `huone_tyypit`", yht.OtaYhteytta());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+
+            return taulu;
+
+        }
+
+
         // Hakee kaikki varaukset
         public DataTable haeVaraukset()
         {

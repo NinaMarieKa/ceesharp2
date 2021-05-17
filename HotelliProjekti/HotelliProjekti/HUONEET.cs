@@ -47,7 +47,7 @@ namespace HotelliProjekti
            
 
         }
-        // Funktio, joka palauttaa huonetyypit
+        // Funktio, joka hakee huoneet tyypin mukaan
         public int haeHuoneTyyppi(int numero)
         {
             MySqlCommand komento = new MySqlCommand("SELECT `tyyppi` FROM `huoneet` WHERE numero=@num", yht.OtaYhteytta());

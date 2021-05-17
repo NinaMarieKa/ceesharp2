@@ -76,26 +76,26 @@ namespace HotelliProjekti
         private void AsiakasMuokkaaBTN_Click(object sender, EventArgs e)
         {
             int asiId;
+            String kayttaja = AsiakasKayttajaTB.Text;
             String enimi = AsiakasEtunimiTB.Text;
             String snimi = AsiakasSukunimiTB.Text;
             String osoite = AsiakasOsoiteTB.Text;
             String pnumero = AsiakasPostinumeroTB.Text;
             String ptpaikka = AsiakasToimipaikkaTB.Text;
-            String kayttaja = AsiakasKayttajaTB.Text;
             String salis = AsiakasSalasanaTB.Text;
 
             try
             {
                 asiId = Convert.ToInt32(AsiakasIdTB.Text);
 
-                if (enimi.Trim().Equals("") || snimi.Trim().Equals("") || osoite.Trim().Equals("") || pnumero.Equals("") || ptpaikka.Trim().Equals("") || kayttaja.Trim().Equals("") || salis.Trim().Equals(""))
+                if (kayttaja.Trim().Equals("") || enimi.Trim().Equals("") || snimi.Trim().Equals("") || osoite.Trim().Equals("") || pnumero.Equals("") || ptpaikka.Trim().Equals("") ||  salis.Trim().Equals(""))
 
                 {
                     MessageBox.Show("Pakollisia kenttiä täyttämättä", "TYHJIÄ KENTTIÄ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    Boolean lisaaAsiakas = asiakas.muokkaaAsiakasta(asiId, enimi, snimi, osoite, pnumero, ptpaikka, kayttaja, salis);
+                    Boolean lisaaAsiakas = asiakas.muokkaaAsiakasta(asiId, kayttaja, enimi, snimi, osoite, pnumero, ptpaikka, salis);
 
                     if (lisaaAsiakas)
                     {

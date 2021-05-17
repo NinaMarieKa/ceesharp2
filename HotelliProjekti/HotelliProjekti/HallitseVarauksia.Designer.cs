@@ -40,13 +40,13 @@
             this.UusiVarausBTN = new System.Windows.Forms.Button();
             this.VarausPoistaBTN = new System.Windows.Forms.Button();
             this.VarausTyhjennaBTN = new System.Windows.Forms.Button();
-            this.VarausAsNumeroTB = new System.Windows.Forms.TextBox();
             this.dateTimeSisaan = new System.Windows.Forms.DateTimePicker();
             this.dateTimeUlos = new System.Windows.Forms.DateTimePicker();
             this.VarausHuoneenNumeroCB = new System.Windows.Forms.ComboBox();
             this.HuoneenTyyppiCB = new System.Windows.Forms.ComboBox();
             this.varausNumeroLB = new System.Windows.Forms.Label();
             this.varausNumeroTB = new System.Windows.Forms.TextBox();
+            this.AsiakasNumeroTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVaraukset)).BeginInit();
             this.SuspendLayout();
@@ -185,14 +185,6 @@
             this.VarausTyhjennaBTN.UseVisualStyleBackColor = false;
             this.VarausTyhjennaBTN.Click += new System.EventHandler(this.VarausTyhjennaBTN_Click);
             // 
-            // VarausAsNumeroTB
-            // 
-            this.VarausAsNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VarausAsNumeroTB.Location = new System.Drawing.Point(263, 203);
-            this.VarausAsNumeroTB.Name = "VarausAsNumeroTB";
-            this.VarausAsNumeroTB.Size = new System.Drawing.Size(327, 35);
-            this.VarausAsNumeroTB.TabIndex = 21;
-            // 
             // dateTimeSisaan
             // 
             this.dateTimeSisaan.CustomFormat = "dd/MM/yyyy";
@@ -246,11 +238,20 @@
             // 
             // varausNumeroTB
             // 
+            this.varausNumeroTB.Enabled = false;
             this.varausNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.varausNumeroTB.Location = new System.Drawing.Point(263, 153);
             this.varausNumeroTB.Name = "varausNumeroTB";
             this.varausNumeroTB.Size = new System.Drawing.Size(327, 35);
             this.varausNumeroTB.TabIndex = 37;
+            // 
+            // AsiakasNumeroTB
+            // 
+            this.AsiakasNumeroTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasNumeroTB.Location = new System.Drawing.Point(263, 203);
+            this.AsiakasNumeroTB.Name = "AsiakasNumeroTB";
+            this.AsiakasNumeroTB.Size = new System.Drawing.Size(327, 35);
+            this.AsiakasNumeroTB.TabIndex = 39;
             // 
             // HallitseVarauksia
             // 
@@ -258,13 +259,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1147, 660);
+            this.Controls.Add(this.AsiakasNumeroTB);
             this.Controls.Add(this.varausNumeroTB);
             this.Controls.Add(this.varausNumeroLB);
             this.Controls.Add(this.HuoneenTyyppiCB);
             this.Controls.Add(this.VarausHuoneenNumeroCB);
             this.Controls.Add(this.dateTimeUlos);
             this.Controls.Add(this.dateTimeSisaan);
-            this.Controls.Add(this.VarausAsNumeroTB);
             this.Controls.Add(this.VarausTyhjennaBTN);
             this.Controls.Add(this.VarausPoistaBTN);
             this.Controls.Add(this.UusiVarausBTN);
@@ -304,12 +305,12 @@
         private System.Windows.Forms.Button UusiVarausBTN;
         private System.Windows.Forms.Button VarausPoistaBTN;
         private System.Windows.Forms.Button VarausTyhjennaBTN;
-        private System.Windows.Forms.TextBox VarausAsNumeroTB;
         private System.Windows.Forms.DateTimePicker dateTimeSisaan;
         private System.Windows.Forms.DateTimePicker dateTimeUlos;
         private System.Windows.Forms.ComboBox VarausHuoneenNumeroCB;
         private System.Windows.Forms.ComboBox HuoneenTyyppiCB;
         private System.Windows.Forms.Label varausNumeroLB;
         private System.Windows.Forms.TextBox varausNumeroTB;
+        private System.Windows.Forms.TextBox AsiakasNumeroTB;
     }
 }
