@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProHoleOy", "ProHoleOy\ProHoleOy.csproj", "{7C3D0E21-1AA2-4727-98C7-B7A13A56B204}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructionControl", "ConstructionControl\ConstructionControl.csproj", "{12456EB9-0919-4481-B0DE-895C44CB797E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7C3D0E21-1AA2-4727-98C7-B7A13A56B204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C3D0E21-1AA2-4727-98C7-B7A13A56B204}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C3D0E21-1AA2-4727-98C7-B7A13A56B204}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C3D0E21-1AA2-4727-98C7-B7A13A56B204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12456EB9-0919-4481-B0DE-895C44CB797E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12456EB9-0919-4481-B0DE-895C44CB797E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12456EB9-0919-4481-B0DE-895C44CB797E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12456EB9-0919-4481-B0DE-895C44CB797E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {76DA7D4F-3FCC-47EF-A58F-45794E2AA7F4}
+		SolutionGuid = {96A9E2D6-47FA-4179-AC41-379FC4AB9052}
 	EndGlobalSection
 EndGlobal

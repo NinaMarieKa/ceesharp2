@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4FD06D9-0F0F-454D-81C8-0DAEAC4EF927}</ProjectGuid>
+    <ProjectGuid>{12456EB9-0919-4481-B0DE-895C44CB797E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Kirjautumislomake</RootNamespace>
-    <AssemblyName>Kirjautumislomake</AssemblyName>
+    <RootNamespace>ConstructionControl</RootNamespace>
+    <AssemblyName>ConstructionControl</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,16 +47,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Kirjautumislomake.cs">
+    <Compile Include="CONNECT.cs" />
+    <Compile Include="Employees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kirjautumislomake.Designer.cs">
-      <DependentUpon>Kirjautumislomake.cs</DependentUpon>
+    <Compile Include="Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoicing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoicing.Designer.cs">
+      <DependentUpon>Invoicing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORDERSC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Kirjautumislomake.resx">
-      <DependentUpon>Kirjautumislomake.cs</DependentUpon>
+    <Compile Include="StartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subcontractors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subcontractors.Designer.cs">
+      <DependentUpon>Subcontractors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkSites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkSites.Designer.cs">
+      <DependentUpon>WorkSites.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoicing.resx">
+      <DependentUpon>Invoicing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +114,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subcontractors.resx">
+      <DependentUpon>Subcontractors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkSites.resx">
+      <DependentUpon>WorkSites.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProHoleOy
+namespace ConstructionControl
 {
-    public partial class Paasivu : Form
+    public partial class WorkSites : Form
     {
-        public Paasivu()
+        public WorkSites()
         {
             InitializeComponent();
         }
-
-      
     }
 }
