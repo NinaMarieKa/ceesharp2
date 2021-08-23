@@ -46,6 +46,7 @@ namespace ConstructionControl
             int phone = Convert.ToInt32(TilaajaPuhTB.Text);
             string job = TilaajaTyoTB.Text;
 
+
             Boolean addOrder = ORDERSC.addOrder(clientName, orderer, workNumber, orderAddress, postCode, city, phone, job);
 
             if(addOrder)

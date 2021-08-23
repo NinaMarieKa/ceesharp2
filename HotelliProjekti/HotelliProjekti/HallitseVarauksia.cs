@@ -46,7 +46,7 @@ namespace HotelliProjekti
         {
             varausNumeroTB.Text = "";
             AsiakasNumeroTB.Text = "";
-            VarausHuoneenNumeroCB.SelectedIndex = 0;
+            VarausHuoneenNumeroCB.SelectedIndex = -1;
             dateTimeSisaan.Value = DateTime.Now;
             dateTimeUlos.Value = DateTime.Now;
 
@@ -90,7 +90,7 @@ namespace HotelliProjekti
                 }
                 else
                 {
-                
+
                     if (varaukset.lisaaVaraus(hnumero, anumero, sisaanKirj, ulosKirj))
                     {
                         // Määritetään huoneen vapaus = EI
@@ -98,6 +98,7 @@ namespace HotelliProjekti
                         dataVaraukset.DataSource = varaukset.haeVaraukset();
                         MessageBox.Show("Varaus lisätty onnistuneesti", "Varaus lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+     
                     else
                     {
                         MessageBox.Show("Varauksen tekeminen epäonnistui", "VIRHE", MessageBoxButtons.OK, MessageBoxIcon.Error);

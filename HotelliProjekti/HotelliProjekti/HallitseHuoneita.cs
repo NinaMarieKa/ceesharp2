@@ -140,7 +140,7 @@ namespace HotelliProjekti
         private void HuoneTyhjennaBTN_Click(object sender, EventArgs e)
         {
             HuoneenNumeroTB.Text = "";
-            HuoneenTyyppiCB.SelectedIndex = 0;
+            HuoneenTyyppiCB.SelectedIndex = -1;
             HuonePuhelinTB.Text = "";
             radioButtonKylla.Checked = true;
         }
